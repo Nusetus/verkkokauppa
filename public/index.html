@@ -1,23 +1,66 @@
 <!DOCTYPE html>
-<html>
+<html lang="fi">
 <head>
-  <title>Oma sivu</title>
+  <meta charset="UTF-8" />
+  <title>Verkkokauppa</title>
   <style>
+    /* Perustyyli */
     body {
       background-color: black;
       color: white;
+      font-size: 16px;
+      font-family: Arial, sans-serif;
+      font-weight: normal;
+      margin: 0;
+      padding: 0;
+      height: 200vh; /* tekee sivusta selkeästi scrollattavan */
+      overflow-y: scroll;
+    }
+
+    /* Keskitetty otsikko */
+    .centered {
       display: flex;
       justify-content: center;
       align-items: center;
       height: 100vh;
-      margin: 0;
-      font-size: 16px; /* normaali koko */
-      font-weight: normal;
-      font-family: Arial, sans-serif;
+    }
+
+    /* Alareunan viiva */
+    .bottom-line {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 1px;
+      background-color: rgba(255, 255, 255, 0.2); /* haalea valkoinen */
+    }
+
+    /* Scrollbar-tyylit Chromelle ja Edgelle */
+    ::-webkit-scrollbar {
+      width: 6px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: transparent;
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background-color: rgba(255, 255, 255, 0.3); /* läpinäkyvä valkoinen */
+      border-radius: 10px;
+    }
+
+    /* Scrollbar-tyylit Firefoxille */
+    html {
+      scrollbar-color: rgba(255, 255, 255, 0.3) transparent;
+      scrollbar-width: thin;
     }
   </style>
 </head>
 <body>
-  <h1 style="font-size: 16px; font-weight: normal; margin: 0;">Verkkokauppa</h1>
+  <div class="centered">
+    <h1 style="font-size: 16px; font-weight: normal; margin: 0;">Verkkokauppa</h1>
+  </div>
+
+  <div class="bottom-line"></div>
 </body>
 </html>
