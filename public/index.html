@@ -12,11 +12,10 @@
       font-weight: normal;
       margin: 0;
       padding: 0;
-      height: 200vh;
+      height: 120vh;
       overflow-y: scroll;
     }
 
-    /* Yläpalkki */
     .top-bar-container {
       position: fixed;
       top: 0;
@@ -37,26 +36,31 @@
       pointer-events: auto;
     }
 
-    .top-bar-text {
-      font-size: 18px;
-      font-weight: bold;
+    .search-input {
+      width: 50%;
+      max-width: 400px;
+      padding: 8px 14px;
+      border: none;
+      border-radius: 5px;
+      background-color: #1d2021;
       color: white;
+      font-size: 16px;
+      outline: none;
     }
 
     .top-bar-shadow {
       height: 2px;
-      background-color: #1d2021; /* Sama kuin tausta */
+      background-color: #1d2021;
       width: calc(100% - 2.4cm);
       margin: 0 1.2cm;
     }
 
-    /* Varaa tilaa yläpalkille */
     .content {
       padding-top: calc(2.5cm + 2px);
     }
 
     .middle-line {
-      margin-top: 66vh;
+      margin-top: 80vh;
       margin-left: 1.2cm;
       margin-right: 1.2cm;
       height: 1px;
@@ -85,15 +89,12 @@
 <body>
   <div class="top-bar-container">
     <div class="top-bar">
-      <div class="top-bar-text">verkkosivu</div>
+      <input type="text" class="search-input" placeholder="Haku...">
     </div>
     <div class="top-bar-shadow"></div>
   </div>
 
   <div class="content">
-    <div class="centered">
-      <h1 style="font-size: 16px; font-weight: normal; margin: 0;">Verkkokauppa</h1>
-    </div>
     <div class="middle-line"></div>
   </div>
 </body>
