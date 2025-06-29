@@ -57,7 +57,7 @@
       outline: none;
       transition: border 0.2s;
       margin-top: 0.3cm;
-      height: 2em; /* kiinteä korkeus */
+      height: 2em;
       box-sizing: border-box;
     }
 
@@ -77,16 +77,16 @@
       width: calc(100% - 2cm);
       height: 1px;
       background-color: rgba(255, 255, 255, 0.1);
-      margin-top: 0.3cm;
+      margin-top: 0.5cm;  /* siirretty alemmas */
       margin-bottom: 0.3cm;
-      margin-left: 1cm;  /* jotta viiva ei ulotu reunoihin */
+      margin-left: 1cm;
       margin-right: 1cm;
     }
 
     .nav-buttons {
       display: flex;
       gap: 1.5cm;
-      margin-bottom: 0.3cm;
+      margin-bottom: 0.5cm; /* siirretty alemmas */
     }
 
     .nav-buttons button {
@@ -112,9 +112,9 @@
     /* Alapalkki nyt scrollattava, sijoitettu 1/3 korkeudelle alhaalta */
     .bottom-line {
       position: absolute;
-      bottom: calc(33.33vh); /* noin 1/3 alhaalta */
-      left: 0;
-      width: 100%;
+      bottom: calc(28vh); /* siirretty alemmas */
+      left: 1cm; /* 1 cm marginaali vasemmalla */
+      width: calc(100% - 2cm); /* 1 cm marginaali kummallakin puolella */
       height: 1px;
       background-color: rgba(255, 255, 255, 0.15);
       z-index: 900;
