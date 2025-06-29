@@ -29,12 +29,12 @@
       height: 2.5cm;
       background-color: #232728;
       display: flex;
-      flex-direction: column;
       justify-content: center;
       align-items: center;
       position: relative;
       pointer-events: auto;
-      padding-top: 5px; /* siirto ylös */
+      flex-direction: column;
+      padding-top: 0.3cm;
     }
 
     .search-input {
@@ -48,7 +48,7 @@
       font-size: 16px;
       outline: none;
       transition: border 0.2s;
-      margin-bottom: 8px; /* tilaa nappeja varten */
+      margin-bottom: 10px;
     }
 
     .search-input:focus {
@@ -63,13 +63,40 @@
       margin: 0 1.2cm;
     }
 
+    .content {
+      padding-top: calc(2.5cm + 2px);
+    }
+
     .inner-line {
       position: absolute;
-      left: 1cm;
-      right: 1cm;
+      bottom: 2.3cm; /* Viiva ylemmäs */
+      left: 0;
+      width: 100%;
       height: 1px;
-      background-color: rgba(255, 255, 255, 0.15); /* hennompaa */
-      top: 66%; /* noin 1/3 alhaalta */
+      background-color: rgba(255, 255, 255, 0.1); /* vielä hennompaa */
+      pointer-events: none;
+    }
+
+    .nav-buttons {
+      display: flex;
+      gap: 2.5rem; /* Lisää tilaa nappien väliin */
+      justify-content: center;
+      width: 100%;
+      pointer-events: auto;
+    }
+
+    .nav-buttons button {
+      background: none;
+      border: none;
+      color: white;
+      font-size: 14px;
+      cursor: pointer;
+      padding: 0;
+      transition: color 0.3s;
+    }
+
+    .nav-buttons button:hover {
+      color: #6caae2;
     }
 
     .middle-line {
@@ -77,31 +104,7 @@
       margin-left: 1.2cm;
       margin-right: 1.2cm;
       height: 1px;
-      background-color: rgba(255, 255, 255, 0.15); /* hennompaa */
-    }
-
-    .button-row {
-      display: flex;
-      justify-content: center;
-      gap: 1rem;
-      width: 100%;
-      max-width: 600px;
-    }
-
-    .button-row button {
-      background: none;
-      border: 1px solid white;
-      color: white;
-      padding: 5px 10px;
-      border-radius: 6px;
-      cursor: pointer;
-      font-size: 14px;
-      transition: background-color 0.3s, color 0.3s;
-    }
-
-    .button-row button:hover {
-      background-color: white;
-      color: #232728;
+      background-color: rgba(255, 255, 255, 0.2);
     }
 
     ::-webkit-scrollbar {
@@ -127,10 +130,9 @@
   <div class="top-bar-container">
     <div class="top-bar">
       <input type="text" class="search-input" placeholder="Haku...">
-      <div class="button-row">
+      <div class="nav-buttons">
         <button>MOOTTORIN OSAT</button>
-        <button>KAASUTTIMET</button>
-        <button>IMU</button>
+        <button>KAASUTTIMET, IMU</button>
         <button>HALLINTALAITTEET</button>
         <button>TUNING OSAT</button>
         <button>PENKINPÄÄLLISET</button>
