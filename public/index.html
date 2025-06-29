@@ -34,7 +34,7 @@
       position: relative;
       pointer-events: auto;
       flex-direction: column;
-      padding-top: 0.4cm; /* siirretään hakupalkkia alemmas */
+      padding-top: 0.4cm; /* hakupalkin siirto alemmas */
     }
 
     .search-input {
@@ -48,7 +48,7 @@
       font-size: 16px;
       outline: none;
       transition: border 0.2s;
-      margin-bottom: 0.7cm; /* vähän väliä hakupalkin ja nappien väliin */
+      margin-bottom: 0.7cm; /* väli hakupalkin ja nappien välillä */
     }
 
     .search-input:focus {
@@ -65,8 +65,8 @@
 
     .button-container {
       display: flex;
-      gap: 2.5rem; /* enemmän tilaa nappien väliin */
-      margin-bottom: 0.7cm; /* tilaa nappeja alemmas */
+      gap: 3rem; /* enemmän tilaa nappien väliin */
+      margin-bottom: 1.2cm; /* napit alempana */
     }
 
     .top-bar-button {
@@ -75,7 +75,7 @@
       background: none;
       border: none;
       cursor: pointer;
-      font-size: 1rem;
+      font-size: 0.85rem; /* fonttikokoa pienennetty */
       padding: 0;
       outline: none;
       transition: color 0.3s;
@@ -87,9 +87,9 @@
 
     .top-bar-line {
       position: absolute;
-      top: 1.4cm; /* siirretty alemmas */
-      left: 1cm;   /* reunoista pois 1cm */
-      right: 1cm;  /* reunoista pois 1cm */
+      top: 1.7cm; /* siirretty alemmas */
+      left: 1cm;
+      right: 1cm;
       height: 1px;
       background-color: rgba(255, 255, 255, 0.15);
     }
