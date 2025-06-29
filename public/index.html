@@ -5,7 +5,7 @@
   <title>Verkkokauppa</title>
   <style>
     body {
-      background-color: #1d2021;
+      background-color: #0d1117;
       color: white;
       font-size: 16px;
       font-family: Arial, sans-serif;
@@ -16,14 +16,45 @@
       overflow-y: scroll;
     }
 
-    .centered {
+    /* Yläpalkki */
+    .top-bar-container {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+      pointer-events: none; /* Ei estä klikkaamista sivun sisällössä */
+    }
+
+    .top-bar {
+      margin: 0 1.2cm;
+      height: 2.5cm;
+      background-color: #010409;
       display: flex;
       justify-content: center;
       align-items: center;
-      height: 100vh;
+      position: relative;
+      pointer-events: auto;
     }
 
-    /* Staattinen viiva 1/3 alhaalta */
+    .top-bar-text {
+      font-size: 18px;
+      font-weight: bold;
+      color: white;
+    }
+
+    .top-bar-shadow {
+      height: 2px;
+      background-color: #000; /* Tummempi kuin #010409 */
+      width: calc(100% - 2.4cm);
+      margin: 0 1.2cm;
+    }
+
+    /* Scrollattavan sisällön marginaali yläpalkin verran */
+    .content {
+      padding-top: calc(2.5cm + 2px);
+    }
+
     .middle-line {
       margin-top: 66vh;
       margin-left: 1.2cm;
@@ -54,11 +85,18 @@
   </style>
 </head>
 <body>
-  <div class="centered">
-    <h1 style="font-size: 16px; font-weight: normal; margin: 0;">Verkkokauppa</h1>
+  <div class="top-bar-container">
+    <div class="top-bar">
+      <div class="top-bar-text">verkkosivu</div>
+    </div>
+    <div class="top-bar-shadow"></div>
   </div>
 
-  <!-- Staattinen, scrollaavaan sisältöön kuuluva viiva -->
-  <div class="middle-line"></div>
+  <div class="content">
+    <div class="centered">
+      <h1 style="font-size: 16px; font-weight: normal; margin: 0;">Verkkokauppa</h1>
+    </div>
+    <div class="middle-line"></div>
+  </div>
 </body>
 </html>
