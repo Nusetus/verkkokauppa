@@ -5,7 +5,7 @@
   <title>Verkkokauppa</title>
   <style>
     body {
-      background-color: #030810;
+      background-color: #1d2021;
       color: white;
       font-size: 16px;
       font-family: Arial, sans-serif;
@@ -23,13 +23,13 @@
       left: 0;
       width: 100%;
       z-index: 1000;
-      pointer-events: none; /* Ei estä klikkaamista sivun sisällössä */
+      pointer-events: none;
     }
 
     .top-bar {
       margin: 0 1.2cm;
       height: 2.5cm;
-      background-color: #010409;
+      background-color: #232728;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -45,12 +45,12 @@
 
     .top-bar-shadow {
       height: 2px;
-      background-color: #000; /* Tummempi kuin #010409 */
+      background-color: #1d2021; /* Sama kuin tausta */
       width: calc(100% - 2.4cm);
       margin: 0 1.2cm;
     }
 
-    /* Scrollattavan sisällön marginaali yläpalkin verran */
+    /* Varaa tilaa yläpalkille */
     .content {
       padding-top: calc(2.5cm + 2px);
     }
@@ -63,7 +63,6 @@
       background-color: rgba(255, 255, 255, 0.2);
     }
 
-    /* Scrollbar-tyyli (Chrome/Edge) */
     ::-webkit-scrollbar {
       width: 6px;
     }
@@ -77,7 +76,6 @@
       border-radius: 10px;
     }
 
-    /* Firefox scrollbar */
     html {
       scrollbar-color: rgba(255, 255, 255, 0.3) transparent;
       scrollbar-width: thin;
@@ -92,5 +90,11 @@
     <div class="top-bar-shadow"></div>
   </div>
 
+  <div class="content">
+    <div class="centered">
+      <h1 style="font-size: 16px; font-weight: normal; margin: 0;">Verkkokauppa</h1>
+    </div>
+    <div class="middle-line"></div>
+  </div>
 </body>
 </html>
