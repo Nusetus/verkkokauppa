@@ -29,10 +29,12 @@
       height: 2.5cm;
       background-color: #232728;
       display: flex;
+      flex-direction: column;
       justify-content: center;
       align-items: center;
       position: relative;
       pointer-events: auto;
+      padding-top: 5px; /* siirto ylös */
     }
 
     .search-input {
@@ -46,6 +48,7 @@
       font-size: 16px;
       outline: none;
       transition: border 0.2s;
+      margin-bottom: 8px; /* tilaa nappeja varten */
     }
 
     .search-input:focus {
@@ -60,16 +63,12 @@
       margin: 0 1.2cm;
     }
 
-    .content {
-      padding-top: calc(2.5cm + 2px);
-    }
-
     .inner-line {
       position: absolute;
       left: 1cm;
       right: 1cm;
       height: 1px;
-      background-color: rgba(255, 255, 255, 0.3);
+      background-color: rgba(255, 255, 255, 0.15); /* hennompaa */
       top: 66%; /* noin 1/3 alhaalta */
     }
 
@@ -78,7 +77,31 @@
       margin-left: 1.2cm;
       margin-right: 1.2cm;
       height: 1px;
-      background-color: rgba(255, 255, 255, 0.2);
+      background-color: rgba(255, 255, 255, 0.15); /* hennompaa */
+    }
+
+    .button-row {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      width: 100%;
+      max-width: 600px;
+    }
+
+    .button-row button {
+      background: none;
+      border: 1px solid white;
+      color: white;
+      padding: 5px 10px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 14px;
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    .button-row button:hover {
+      background-color: white;
+      color: #232728;
     }
 
     ::-webkit-scrollbar {
@@ -104,6 +127,14 @@
   <div class="top-bar-container">
     <div class="top-bar">
       <input type="text" class="search-input" placeholder="Haku...">
+      <div class="button-row">
+        <button>MOOTTORIN OSAT</button>
+        <button>KAASUTTIMET</button>
+        <button>IMU</button>
+        <button>HALLINTALAITTEET</button>
+        <button>TUNING OSAT</button>
+        <button>PENKINPÄÄLLISET</button>
+      </div>
       <div class="inner-line"></div>
     </div>
     <div class="top-bar-shadow"></div>
