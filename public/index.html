@@ -59,6 +59,7 @@
       transition: border 0.2s;
       height: 2em;
       box-sizing: border-box;
+      margin-top: 0.3cm;
     }
 
     .search-input:focus {
@@ -73,13 +74,17 @@
       margin: 0 1cm;
     }
 
-    /* Hento viiva siirretty hakupalkin ja nappien väliin */
+    /* Yläpalkin hento viiva, siirretty 2cm alas yläreunasta */
     .top-bar-line {
+      position: fixed;
+      top: 2cm;
+      left: 1cm;
       width: calc(100% - 2cm);
       height: 1px;
       background-color: rgba(255, 255, 255, 0.15);
       border-radius: 1px;
-      margin: 0.5cm 0;
+      pointer-events: none;
+      z-index: 1001;
     }
 
     .nav-buttons {
@@ -142,7 +147,6 @@
   <div class="top-bar-container">
     <div class="top-bar">
       <input type="text" class="search-input" placeholder="Haku...">
-      <div class="top-bar-line"></div>
       <div class="nav-buttons">
         <button>MOOTTORIN OSAT</button>
         <button>KAASUTTIMET & IMU</button>
@@ -159,5 +163,7 @@
   </div>
 
   <div class="bottom-line"></div>
+
+  <div class="top-bar-line"></div> <!-- Viiva erillisenä elementtinä -->
 </body>
 </html>
