@@ -38,11 +38,12 @@
       background-color: #232728;
       display: flex;
       flex-direction: column;
-      align-items: center;
+      justify-content: flex-end; /* Napit alareunaan */
       pointer-events: auto;
       position: relative;
       box-sizing: border-box;
       padding-top: 0.3cm;
+      padding-bottom: 0.5cm; /* Tilaa nappeihin ja alareunaan */
     }
 
     .search-input {
@@ -59,7 +60,8 @@
       transition: border 0.2s;
       height: 2em;
       box-sizing: border-box;
-      margin-top: 0.3cm;
+      margin-bottom: 0.5cm; /* Erotus hakupalkista ja viivasta */
+      align-self: center;
     }
 
     .search-input:focus {
@@ -74,10 +76,10 @@
       margin: 0 1cm;
     }
 
-    /* Yläpalkin hento viiva, nostettu ylemmäs ja leveys 100% - 2cm */
+    /* Viiva nappien yläpuolella, samalla etäisyydellä kuin napit alareunassa */
     .top-bar-line {
-      position: fixed;
-      top: 1.8cm;
+      position: absolute;
+      bottom: 2.2cm; /* Säädetty niin, että väli on sama kuin napit ja alareuna */
       left: 1cm;
       width: calc(100% - 2cm);
       height: 1px;
@@ -90,8 +92,9 @@
     .nav-buttons {
       display: flex;
       gap: 1.5cm;
-      margin-top: 1.2cm;  /* Lisätty tilaa nappeja alemmas */
-      margin-bottom: 0.5cm;
+      margin: 0;
+      padding: 0;
+      justify-content: center;
     }
 
     .nav-buttons button {
@@ -147,6 +150,7 @@
   <div class="top-bar-container">
     <div class="top-bar">
       <input type="text" class="search-input" placeholder="Haku...">
+      <div class="top-bar-line"></div>
       <div class="nav-buttons">
         <button>MOOTTORIN OSAT</button>
         <button>KAASUTTIMET & IMU</button>
@@ -163,7 +167,5 @@
   </div>
 
   <div class="bottom-line"></div>
-
-  <div class="top-bar-line"></div> <!-- Viiva erillisenä elementtinä -->
 </body>
 </html>
