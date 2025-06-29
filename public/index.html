@@ -4,11 +4,19 @@
   <meta charset="UTF-8" />
   <title>Verkkokauppa</title>
   <style>
+    @font-face {
+      font-family: 'Eurostile';
+      src: local('Eurostile'), local('Eurostile-Regular'),
+           url('https://fonts.cdnfonts.com/s/17215/Eurostile.woff') format('woff');
+      font-weight: normal;
+      font-style: normal;
+    }
+
     body {
       background-color: #1d2021;
       color: white;
+      font-family: 'Eurostile', Arial, sans-serif;
       font-size: 16px;
-      font-family: Arial, sans-serif;
       margin: 0;
       padding: 0;
       height: 120vh;
@@ -29,12 +37,10 @@
       height: 2.7cm;
       background-color: #232728;
       display: flex;
-      justify-content: center;
-      align-items: center;
-      position: relative;
-      pointer-events: auto;
       flex-direction: column;
-      padding-top: 0.7cm; /* Lisätty siirtoa alemmas hakupalkille */
+      align-items: center;
+      pointer-events: auto;
+      position: relative;
     }
 
     .search-input {
@@ -45,10 +51,11 @@
       border-radius: 8px;
       background-color: #232728;
       color: white;
+      font-family: 'Eurostile', Arial, sans-serif;
       font-size: 16px;
       outline: none;
       transition: border 0.2s;
-      margin-bottom: 1cm; /* Lisätty tilaa hakupalkin ja nappien väliin */
+      margin-top: 0.3cm;
     }
 
     .search-input:focus {
@@ -63,47 +70,37 @@
       margin: 0 1cm;
     }
 
-    .button-container {
-      display: flex;
-      gap: 3rem;
-      margin-bottom: 1.5cm; /* Lisätty tilaa nappeja alemmas */
+    .nav-line {
+      width: calc(100% - 2cm);
+      height: 1px;
+      background-color: rgba(255, 255, 255, 0.1);
+      margin-top: 0.3cm;
+      margin-bottom: 0.3cm;
     }
 
-    .top-bar-button {
-      font-weight: bold;
-      color: white;
+    .nav-buttons {
+      display: flex;
+      gap: 1.5cm;
+      margin-bottom: 0.3cm;
+    }
+
+    .nav-buttons button {
       background: none;
       border: none;
+      color: white;
+      font-family: 'Eurostile', Arial, sans-serif;
+      font-weight: bold;
+      font-size: 15px; /* yksi fonttikoko pienempi */
       cursor: pointer;
-      font-size: 1rem; /* Nostettu yhdellä fonttikokoa */
       padding: 0;
-      outline: none;
-      transition: color 0.3s;
     }
 
-    .top-bar-button:hover {
+    .nav-buttons button:hover {
       color: #6caae2;
     }
 
-    .top-bar-line {
-      position: absolute;
-      top: 1.7cm;
-      left: 1cm;
-      right: 1cm;
-      height: 1px;
-      background-color: rgba(255, 255, 255, 0.15);
-    }
-
     .content {
-      padding-top: calc(2.7cm + 2px);
-    }
-
-    .middle-line {
-      margin-top: 80vh;
-      margin-left: 1.2cm;
-      margin-right: 1.2cm;
-      height: 1px;
-      background-color: rgba(255, 255, 255, 0.2);
+      padding-top: calc(2.7cm + 2px + 1cm); /* yläpalkin + varjon + ekstra tilaa */
     }
 
     ::-webkit-scrollbar {
@@ -115,12 +112,12 @@
     }
 
     ::-webkit-scrollbar-thumb {
-      background-color: rgba(255, 255, 255, 0.15);
+      background-color: rgba(255, 255, 255, 0.25);
       border-radius: 10px;
     }
 
     html {
-      scrollbar-color: rgba(255, 255, 255, 0.15) transparent;
+      scrollbar-color: rgba(255, 255, 255, 0.25) transparent;
       scrollbar-width: thin;
     }
   </style>
@@ -129,20 +126,20 @@
   <div class="top-bar-container">
     <div class="top-bar">
       <input type="text" class="search-input" placeholder="Haku...">
-      <div class="button-container">
-        <button class="top-bar-button">MOOTTORIN OSAT</button>
-        <button class="top-bar-button">KAASUTTIMET, IMU</button>
-        <button class="top-bar-button">HALLINTALAITTEET</button>
-        <button class="top-bar-button">TUNING OSAT</button>
-        <button class="top-bar-button">PENKINPÄÄLLISET</button>
+      <div class="nav-line"></div>
+      <div class="nav-buttons">
+        <button>MOOTTORIN OSAT</button>
+        <button>KAASUTTIMET, IMU</button>
+        <button>HALLINTALAITTEET</button>
+        <button>TUNING OSAT</button>
+        <button>PENKINPÄÄLLISET</button>
       </div>
-      <div class="top-bar-line"></div>
     </div>
     <div class="top-bar-shadow"></div>
   </div>
 
   <div class="content">
-    <div class="middle-line"></div>
+    <!-- Sisältö tähän -->
   </div>
 </body>
 </html>
