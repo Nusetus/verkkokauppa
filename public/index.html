@@ -1,6 +1,55 @@
 <!DOCTYPE html>
+
 <html lang="fi">
 <head>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  @media (max-width: 600px) {
+  .top-bar {
+    height: auto;
+    padding: 0.4cm 0.6cm 0.8cm 0.6cm;
+    margin: 0 0.5cm;
+  }
+
+  .search-input {
+    width: 100%;
+    max-width: 100%;
+    font-size: 14px;
+    margin-bottom: 0.5cm;
+  }
+
+  .nav-buttons {
+    flex-wrap: wrap;
+    gap: 1cm;
+    justify-content: center;
+    margin-top: 0.4cm;
+  }
+
+  .nav-buttons button {
+    font-size: 12px;
+    flex: 1 1 45%; /* napit kahdelle riville ja vähän joustoa */
+    min-width: 120px;
+    padding: 6px 0;
+  }
+
+  .top-bar-line {
+    left: 0.5cm;
+    width: calc(100% - 1cm);
+    bottom: 2.3cm; /* siirrä alemmas jotta mahtuu */
+  }
+
+  .top-bar-shadow {
+    width: calc(100% - 1cm);
+    margin: 0 0.5cm;
+  }
+
+  .bottom-line {
+    left: 0.5cm;
+    width: calc(100% - 1cm);
+  }
+}
+
   <meta charset="UTF-8" />
   <title>Verkkokauppa</title>
   <style>
