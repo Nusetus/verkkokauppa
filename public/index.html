@@ -75,9 +75,10 @@
       margin: 0 1cm;
     }
 
+    /* Viiva nappeja ylempänä, kunnolla tilaa nappien yläpuolella */
     .top-bar-line {
       position: absolute;
-      bottom: 1.1cm;
+      bottom: 1.1cm; /* Alemmaksi, nappeihin nähden */
       left: 1cm;
       width: calc(100% - 2cm);
       height: 1px;
@@ -90,7 +91,7 @@
     .nav-buttons {
       display: flex;
       gap: 2cm;
-      margin-top: 0.6cm;
+      margin-top: 0.6cm; /* Pieni siirto nappien yläpuolelta */
       justify-content: center;
       margin-bottom: 0;
     }
@@ -125,24 +126,6 @@
       z-index: 900;
     }
 
-    .payment-icons {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: 1cm;
-      margin-top: calc(28vh + 1cm);
-    }
-
-    .payment-icons img {
-      height: 24px;
-      opacity: 0.85;
-      transition: opacity 0.2s;
-    }
-
-    .payment-icons img:hover {
-      opacity: 1;
-    }
-
     ::-webkit-scrollbar {
       width: 6px;
     }
@@ -161,6 +144,7 @@
       scrollbar-width: thin;
     }
 
+    /* --- MEDIA QUERY PUHELIMILLE --- */
     @media (max-width: 600px) {
       .top-bar {
         height: auto;
@@ -176,13 +160,13 @@
       }
 
       .nav-buttons {
-        display: none;
+        display: none; /* Piilota napit puhelimessa */
       }
 
       .top-bar-line {
         left: 0.5cm;
         width: calc(100% - 1cm);
-        bottom: 1cm;
+        bottom: 1cm; /* Siirrä hento viiva hakupalkin alapuolelle puhelimessa */
       }
 
       .top-bar-shadow {
@@ -193,12 +177,6 @@
       .bottom-line {
         left: 0.5cm;
         width: calc(100% - 1cm);
-      }
-
-      .payment-icons {
-        flex-wrap: wrap;
-        gap: 0.5cm;
-        margin-top: 2cm;
       }
     }
   </style>
@@ -226,11 +204,11 @@
   <div class="bottom-line"></div>
 
   <!-- Maksutapojen logot -->
-  <div class="payment-icons">
-    <img src="applepay.svg" alt="Apple Pay">
-    <img src="mc.svg" alt="Mastercard">
-    <img src="mobilepay.svg" alt="MobilePay">
-    <img src="visa.svg" alt="Visa">
+  <div style="display: flex; justify-content: center; align-items: center; gap: 20px; margin-top: 1.5cm; margin-bottom: 2cm;">
+    <img src="applepay.svg" alt="Apple Pay" height="32">
+    <img src="mc.svg" alt="Mastercard" height="32">
+    <img src="mobilepay.svg" alt="MobilePay" height="32">
+    <img src="visa.svg" alt="Visa" height="32">
   </div>
 </body>
 </html>
