@@ -75,25 +75,25 @@
     }
 
     /* Viiva nappeja ylempänä, kunnolla tilaa nappien yläpuolella */
-    .top-bar-line {
-      position: absolute;
-      bottom: 1.8cm; /* Nostettu ylemmäs */
-      left: 1cm;
-      width: calc(100% - 2cm);
-      height: 1px;
-      background-color: rgba(255, 255, 255, 0.15);
-      border-radius: 1px;
-      pointer-events: none;
-      z-index: 1001;
-    }
+.top-bar-line {
+  position: absolute;
+  bottom: 1.1cm; /* Alemmaksi, nappeihin nähden */
+  left: 1cm;
+  width: calc(100% - 2cm);
+  height: 1px;
+  background-color: rgba(255, 255, 255, 0.15);
+  border-radius: 1px;
+  pointer-events: none;
+  z-index: 1001;
+}
 
-    .nav-buttons {
-      display: flex;
-      gap: 2cm; /* Reilummin väliä */
-      margin-top: 1.5cm; /* Siirretty nappeja selvästi alemmas */
-      margin-bottom: 0;
-      justify-content: center;
-    }
+.nav-buttons {
+  display: flex;
+  gap: 1.5cm;
+  margin-top: 0.2cm; /* Pieni siirto nappien yläpuolelta */
+  justify-content: center;
+  margin-bottom: 0;
+}
 
     .nav-buttons button {
       background: none;
