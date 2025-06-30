@@ -28,7 +28,7 @@
     }
 
     .bottom-line {
-      margin: 0 1cm 0 1cm;
+      margin: 0 1cm 1cm 1cm; /* Ylempänä kuin ennen */
       height: 1px;
       background-color: rgba(255, 255, 255, 0.15);
       z-index: 900;
@@ -37,14 +37,14 @@
     .payment-section {
       display: flex;
       flex-direction: column;
-      margin-left: 1cm; /* Hiukan vasemmalle */
+      margin-left: 1cm; /* Siirto hieman vasemmalle */
       margin-bottom: 2cm; /* Alhaalla tilaa */
       gap: 0.4cm;
       align-items: flex-start;
     }
 
     .payment-title {
-      font-size: 12px;
+      font-size: 14px; /* Isompi fontti */
       color: rgba(255, 255, 255, 0.3);
       font-weight: normal;
       font-family: 'Eurostile', Arial, sans-serif;
@@ -55,14 +55,15 @@
       display: flex;
       gap: 20px;
       align-items: center;
-      flex-wrap: wrap; /* Puhelimella riville */
+      flex-wrap: wrap;
     }
 
     .payment-logos img {
-      height: 32px; /* Isompi */
+      height: 28px; /* Sama koko kaikille */
       width: auto;
     }
 
+    /* Scrollbar tyylit */
     ::-webkit-scrollbar {
       width: 6px;
     }
@@ -81,7 +82,7 @@
       scrollbar-width: thin;
     }
 
-    /* RESPONSIIIVISUUS PUHELIMILLE */
+    /* Responsiivisuus puhelimille */
     @media (max-width: 600px) {
       .payment-section {
         margin-left: 0.5cm;
@@ -94,7 +95,7 @@
       }
 
       .payment-logos img {
-        height: 28px;
+        height: 24px;
       }
     }
   </style>
