@@ -82,7 +82,7 @@
       gap: 6px;
       cursor: pointer;
       color: white;
-      font-size: 13px;
+      font-size: 12px; /* pienempi fontti */
       user-select: none;
       font-weight: normal;
       position: relative;
@@ -95,7 +95,7 @@
     }
 
     .language-select img {
-      height: 18px;
+      height: 16px; /* pienempi lippu */
       width: auto;
       border-radius: 2px;
       display: block;
@@ -116,23 +116,28 @@
       position: absolute;
       bottom: 30px;
       left: 0;
-      background-color: #2b2f36;
-      padding: 8px 14px;
+      background-color: #444a56; /* harmaa tausta */
+      padding: 6px 12px;
       border-radius: 4px;
-      font-size: 16px; /* Isompi fontti */
+      font-size: 14px; /* vähän isompi kuin valikko */
       white-space: nowrap;
       color: white;
       z-index: 999;
-      min-width: 170px;
-      display: flex;            /* flex container */
-      align-items: center;      /* keskitetään pystysuoraan */
-      gap: 10px;                /* tila kuvan ja tekstin väliin */
+      min-width: max-content;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      box-sizing: border-box;
+      /* leveys just sopiva teksteille */
+      max-width: 200px;
+      user-select: none;
     }
 
     .language-box img {
-      height: 20px; /* Isompi lippu */
+      height: 18px; /* vähän pienempi kuin aiemmin */
       width: auto;
       display: block;
+      border-radius: 2px;
     }
 
     /* Tämä kontti nyt flex row, keskittää sisältöä vaakasuoraan */
@@ -141,7 +146,7 @@
       align-items: center;
       gap: 2rem;
       min-width: 360px;
-      user-select: text;
+      user-select: none;
       color: white;
       font-size: 14px;
       white-space: nowrap;
@@ -337,7 +342,7 @@
         <img src="visa.svg" alt="Visa" />
       </div>
       <div class="language-select" tabindex="0" role="button" onclick="toggleLangBox()" aria-label="Valitse kieli">
-        <div class="language-box" id="langBox">
+        <div class="language-box" id="langBox" style="display:none;">
           <img src="Suomenlippu.svg" alt="Suomen lippu" />
           <span>Suomi</span>
         </div>
@@ -354,7 +359,7 @@
       </div>
 
       <div class="somet-wrapper">
-        <div class="somet-text">Tiktok</div>
+        <div class="somet-text">Somet</div>
         <button class="tiktok-btn" aria-label="TikTok some-link" onclick="window.open('https://www.tiktok.com', '_blank')">
           <img src="Tiktok.png" alt="TikTok" />
         </button>
@@ -372,10 +377,14 @@
   <script>
     function toggleLangBox() {
       const box = document.getElementById("langBox");
-      box.style.display = (box.style.display === "flex") ? "none" : "flex";
-      setTimeout(() => {
-        document.addEventListener('click', outsideClick, { once: true });
-      }, 10);
+      if(box.style.display === "flex") {
+        box.style.display = "none";
+      } else {
+        box.style.display = "flex";
+        setTimeout(() => {
+          document.addEventListener('click', outsideClick, { once: true });
+        }, 10);
+      }
     }
 
     function outsideClick(e) {
