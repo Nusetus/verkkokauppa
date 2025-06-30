@@ -56,23 +56,25 @@
       display: flex;
       gap: 20px;
       align-items: center;
-      flex-wrap: wrap;
+      flex-wrap: nowrap; /* Ei riville, kaikki samalla rivillä */
     }
 
     .payment-logos img {
       height: 28px;
       width: auto;
+      display: block; /* varmista ettei ylimääräistä tilaa */
     }
 
     .copyright {
       position: fixed;
-      bottom: 10px;
-      right: 10px;
-      font-size: 13px;
+      bottom: 4.8cm; /* vähän ylemmäs kuin maksutavat */
+      right: 1cm;
+      font-size: 16px;
       color: rgba(255, 255, 255, 0.3);
       font-family: 'Eurostile', Arial, sans-serif;
       user-select: none;
       pointer-events: none;
+      white-space: nowrap;
     }
 
     /* Scrollbar styles */
@@ -104,6 +106,7 @@
       .payment-logos {
         gap: 12px;
         justify-content: flex-start;
+        flex-wrap: wrap; /* Rivitys puhelimella */
       }
 
       .payment-logos img {
@@ -111,9 +114,9 @@
       }
 
       .copyright {
-        font-size: 11px;
-        bottom: 8px;
-        right: 8px;
+        font-size: 14px;
+        bottom: 5.5cm;
+        right: 0.5cm;
       }
     }
   </style>
@@ -125,10 +128,10 @@
   <div class="payment-section">
     <div class="payment-title">Maksutavat</div>
     <div class="payment-logos">
-      <img src="applepay.svg" alt="Apple Pay">
-      <img src="mc.svg" alt="Mastercard">
-      <img src="mobilepay.svg" alt="MobilePay">
-      <img src="visa.svg" alt="Visa">
+      <img src="applepay.svg" alt="Apple Pay" />
+      <img src="mc.svg" alt="Mastercard" />
+      <img src="mobilepay.svg" alt="MobilePay" />
+      <img src="visa.svg" alt="Visa" />
     </div>
   </div>
 
