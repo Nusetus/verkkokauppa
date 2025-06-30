@@ -87,6 +87,11 @@
       font-weight: normal;
       position: relative;
       width: max-content;
+      transition: color 0.2s;
+    }
+
+    .language-select:hover {
+      color: #a3c1ff;
     }
 
     .language-select img {
@@ -94,16 +99,6 @@
       width: auto;
       border-radius: 2px;
       display: block;
-    }
-
-    .language-select .lang-code {
-      font-weight: bold;
-      color: white;
-      transition: color 0.2s;
-    }
-
-    .language-select:hover .lang-code {
-      color: #a3c1ff;
     }
 
     .language-select .dropdown-arrow {
@@ -121,7 +116,7 @@
       position: absolute;
       bottom: 30px;
       left: 0;
-      background-color: black;
+      background-color: #2b2f36;
       padding: 6px 10px;
       border-radius: 4px;
       font-size: 12px;
@@ -153,6 +148,7 @@
       transition: color 0.2s;
       font-size: 14px;
     }
+
     button.middle-button:hover {
       color: #a3c1ff;
     }
@@ -192,6 +188,7 @@
       text-align: left;
       font-size: 13px;
     }
+
     button.footer-button:hover {
       color: #a3c1ff;
     }
@@ -263,9 +260,12 @@
         <img src="visa.svg" alt="Visa" />
       </div>
       <div class="language-select" tabindex="0" role="button" onclick="toggleLangBox()" aria-label="Valitse kieli">
-        <div class="language-box" id="langBox">Suomi 🇫🇮</div>
+        <div class="language-box" id="langBox">
+          <img src="Suomenlippu.svg" alt="Suomen lippu" style="height: 12px; vertical-align: middle; margin-right: 6px;" />
+          Suomi
+        </div>
         <img src="Suomenlippu.svg" alt="Suomen lippu" />
-        <span class="lang-code">FI</span>
+        <span>Suomi</span>
         <i class="dropdown-arrow"></i>
       </div>
     </div>
