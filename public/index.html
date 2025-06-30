@@ -19,7 +19,7 @@
       font-size: 15px;
       margin: 0;
       padding: 0;
-      min-height: 110vh; /* Pienennetty sivun korkeutta */
+      min-height: 110vh;
       overflow-y: scroll;
       display: flex;
       flex-direction: column;
@@ -76,14 +76,21 @@
       display: flex;
       flex-direction: column;
       align-items: flex-start;
-      gap: 1rem; /* Lisätty enemmän väliä */
+      gap: 1rem;
       user-select: none;
       white-space: nowrap;
       color: rgba(255,255,255,0.3);
-      font-size: 14px; /* Fonttikoko verkkokaupalle */
+      font-size: 14px;
     }
 
-    .email-button {
+    .footer-buttons {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      width: max-content;
+    }
+
+    button.footer-button {
       font-family: 'Eurostile', Arial, sans-serif;
       font-weight: normal;
       text-transform: uppercase;
@@ -98,10 +105,10 @@
       white-space: nowrap;
       text-align: left;
       display: inline-block;
-      font-size: 13px; /* Pienempi fontti gmailille */
+      font-size: 13px;
     }
-    .email-button:hover {
-      color: #a3c1ff; /* Vaaleansininen hover */
+    button.footer-button:hover {
+      color: #a3c1ff;
     }
 
     /* Scrollbar styles */
@@ -123,7 +130,6 @@
       scrollbar-width: thin;
     }
 
-    /* Responsiivisuus puhelimille */
     @media (max-width: 600px) {
       .footer-container {
         flex-direction: column;
@@ -133,7 +139,7 @@
       }
 
       .payment-title,
-      .email-button,
+      button.footer-button,
       .copyright {
         font-size: 13px;
       }
@@ -163,8 +169,13 @@
         <img src="visa.svg" alt="Visa" />
       </div>
     </div>
+
     <div class="copyright-group">
-      <button class="email-button" onclick="window.location.href='mailto:CONTACT@GMAIL.COM'">CONTACT@GMAIL.COM</button>
+      <div class="footer-buttons">
+        <button class="footer-button" onclick="window.location.href='#'">Toimitus- ja maksuehdot</button>
+        <button class="footer-button" onclick="window.location.href='#'">Tietosuojaseloste</button>
+      </div>
+      <button class="footer-button" onclick="window.location.href='mailto:CONTACT@GMAIL.COM'">CONTACT@GMAIL.COM</button>
       <div>© 2025 Verkkokauppa</div>
     </div>
   </div>
