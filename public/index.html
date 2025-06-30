@@ -15,7 +15,6 @@
 
     body {
       background-color: #1e2228;
-      color: white;
       font-family: 'Eurostile', Arial, sans-serif;
       font-size: 15px;
       margin: 0;
@@ -25,6 +24,7 @@
       display: flex;
       flex-direction: column;
       justify-content: flex-end;
+      color: rgba(255, 255, 255, 0.3);
     }
 
     .bottom-line {
@@ -42,6 +42,7 @@
       user-select: none;
       flex-wrap: wrap;
       gap: 1rem;
+      color: rgba(255,255,255,0.3);
     }
 
     .payment-group {
@@ -49,12 +50,11 @@
       flex-direction: column;
       gap: 0.3rem;
       user-select: none;
+      text-align: left;
     }
 
     .payment-title {
       font-size: 14px;
-      color: white;
-      font-family: 'Eurostile', Arial, sans-serif;
       font-weight: normal;
       white-space: nowrap;
     }
@@ -76,26 +76,40 @@
       display: flex;
       flex-direction: column;
       align-items: flex-start;
-      gap: 0.6rem;  /* Lisätty enemmän tilaa tekstien väliin */
+      gap: 0.6rem;  /* Väli tekstien välissä */
       user-select: none;
       white-space: nowrap;
-      color: white;
+      color: rgba(255,255,255,0.3);
+      text-align: left;
     }
 
-    .email {
+    .email-button {
       font-size: 14px;
       font-family: 'Eurostile', Arial, sans-serif;
       font-weight: normal;
       text-transform: uppercase;
       letter-spacing: 1px;
       color: white;
+      background: none;
+      border: 1px solid white;
+      border-radius: 6px;
+      padding: 4px 10px;
+      cursor: pointer;
+      user-select: text;
+      transition: background-color 0.2s, color 0.2s;
+      white-space: nowrap;
+      text-align: center;
+      display: inline-block;
+    }
+    .email-button:hover {
+      background-color: white;
+      color: #1e2228;
     }
 
     .copyright {
       font-size: 14px;
       font-family: 'Eurostile', Arial, sans-serif;
       font-weight: normal;
-      color: white;
     }
 
     /* Scrollbar styles */
@@ -127,7 +141,7 @@
       }
 
       .payment-title,
-      .email,
+      .email-button,
       .copyright {
         font-size: 13px;
       }
@@ -158,7 +172,7 @@
       </div>
     </div>
     <div class="copyright-group">
-      <div class="email">XX@GMAIL.COM</div>
+      <button class="email-button" onclick="window.location.href='mailto:CONTACT@GMAIL.COM'">CONTACT@GMAIL.COM</button>
       <div class="copyright">© 2025 Verkkokauppa</div>
     </div>
   </div>
