@@ -112,7 +112,7 @@
     }
 
     .language-box {
-      display: none; /* Aluksi piilossa */
+      display: none;
       position: absolute;
       bottom: 30px;
       left: 0;
@@ -123,21 +123,19 @@
       white-space: nowrap;
       color: white;
       z-index: 999;
-      min-width: 150px; /* tarpeeksi leveä että lippu ja teksti mahtuu */
+      min-width: 150px;
     }
 
-    /* Tämä kontti nyt flex row, keskittää sisältöä vaakasuoraan */
     .middle-buttons-container {
       display: flex;
       align-items: center;
-      gap: 3rem; /* Lisätty isompi gap somet ja napit väliin */
+      justify-content: center;
+      gap: 2rem;
       min-width: 360px;
       user-select: text;
       color: white;
       font-size: 14px;
       white-space: nowrap;
-      justify-content: center; /* Keskittää keskimmäiset napit ja somet */
-      flex-wrap: nowrap;
     }
 
     .middle-buttons {
@@ -146,7 +144,6 @@
       justify-content: center;
       gap: 0.3rem;
       min-width: 180px;
-      /* Ei muutoksia, pitää napit keskellä */
     }
 
     button.middle-button {
@@ -167,22 +164,22 @@
 
     .somet-wrapper {
       display: flex;
-      flex-direction: row; /* Vaakasuoraan, koska somen nappi siirretty vasemmalle */
+      flex-direction: column;
       align-items: center;
-      min-width: 100px; /* hieman leveämpi */
+      margin-left: 2cm;
       user-select: none;
       cursor: pointer;
-      gap: 0.6rem; /* Tilaa somet ja tiktok kuvan väliin */
-      margin-left: -1rem; /* Siirtää somet-nappia vasemmalle */
+      gap: 0.3rem;
     }
 
     .somet-text {
       font-family: 'Eurostile', Arial, sans-serif;
       font-size: 15px;
       color: rgba(255, 255, 255, 0.15);
-      margin: 0; /* Poistettu bottom margin */
       white-space: nowrap;
       text-align: center;
+      margin: 0.2cm 0 0 0; /* liikutettu 0.2cm alas */
+      user-select: text;
     }
 
     .tiktok-btn {
@@ -192,20 +189,26 @@
       cursor: pointer;
       outline: none;
       user-select: none;
-      display: inline-block;
+      margin-top: 0.1cm; /* liikutettu 0.1cm alas */
+      filter: none;
+      transition: filter 0.3s ease, filter 0.3s ease-in-out;
     }
 
     .tiktok-btn img {
       width: 32px;
       height: auto;
       display: block;
-      transition: filter 0.3s ease;
+      filter: none;
+      transition: filter 0.3s ease, brightness 0.3s ease;
+      /* alkuperäinen kuva normaali */
+      filter: none;
     }
 
-    /* Hover: vaihda kuva siniseksi, käytetään filter: invert + sepia + saturate + hue-rotate */
-    /* Vaihdettu väri samaksi kuin tekstien hover (a3c1ff) */
     .tiktok-btn:hover img {
-      filter: invert(61%) sepia(74%) saturate(4133%) hue-rotate(190deg) brightness(1.1);
+      filter: none;
+      /* korvaan drop-shadowin värillä: tehdään kuva vaaleansinertävä */
+      /* koska kuvan väri on, todennäköisesti, mustavalkoinen tai RGB, käytetään brightness ja sepia/hue-rotate */
+      filter: brightness(1.2) sepia(1) hue-rotate(190deg) saturate(4) brightness(1.2);
     }
 
     .copyright-group {
@@ -294,6 +297,7 @@
         flex-direction: column;
         min-width: auto;
         gap: 0.5rem;
+        justify-content: flex-start;
       }
 
       .middle-buttons {
@@ -301,7 +305,6 @@
         text-align: left;
         flex-direction: row;
         gap: 1rem;
-        justify-content: center;
       }
 
       .somet-wrapper {
@@ -309,6 +312,17 @@
         gap: 0.5rem;
         min-width: auto;
         margin-left: 0;
+        align-items: center;
+      }
+
+      .somet-text {
+        color: rgba(255, 255, 255, 0.15);
+        margin: 0;
+      }
+
+      .tiktok-btn {
+        filter: none;
+        margin-top: 0;
       }
     }
   </style>
@@ -343,7 +357,7 @@
         <button class="middle-button" onclick="window.location.href='#'">Tietosuojaseloste</button>
       </div>
 
-      <div class="somet-wrapper">
+      <div class="somet-wrapper" aria-label="Sosiaalinen media">
         <div class="somet-text">Somet</div>
         <button class="tiktok-btn" aria-label="TikTok some-link" onclick="window.open('https://www.tiktok.com', '_blank')">
           <img src="Tiktok.png" alt="TikTok" />
