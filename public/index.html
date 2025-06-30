@@ -20,12 +20,8 @@
       font-size: 15px;
       margin: 0;
       padding: 0;
-      min-height: 150vh; /* Sivusta pidempi scrollaukseen */
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-end;
+      min-height: 150vh;
       overflow-y: scroll;
-      position: relative;
     }
 
     .bottom-line {
@@ -35,46 +31,39 @@
       z-index: 900;
     }
 
-    .payment-section {
+    .payment-header {
       display: flex;
-      flex-direction: column;
-      margin-left: 1cm;
-      margin-bottom: 2cm;
-      gap: 0.4cm;
-      align-items: flex-start;
+      justify-content: space-between;
+      align-items: center;
+      margin: 0 1cm 0.4cm 1cm;
+      user-select: none;
     }
 
-    .payment-title {
+    .payment-title,
+    .copyright {
       font-size: 14px;
       color: rgba(255, 255, 255, 0.3);
-      font-weight: normal;
       font-family: 'Eurostile', Arial, sans-serif;
-      user-select: none;
+      font-weight: normal;
+      white-space: nowrap;
+    }
+
+    .payment-section {
+      margin: 0 1cm 2cm 1cm;
     }
 
     .payment-logos {
       display: flex;
       gap: 20px;
       align-items: center;
-      flex-wrap: nowrap; /* Ei riville, kaikki samalla rivillä */
+      flex-wrap: nowrap;
+      margin-top: 0.4cm;
     }
 
     .payment-logos img {
       height: 28px;
       width: auto;
-      display: block; /* varmista ettei ylimääräistä tilaa */
-    }
-
-    .copyright {
-      position: fixed;
-      bottom: 4.8cm; /* vähän ylemmäs kuin maksutavat */
-      right: 1cm;
-      font-size: 16px;
-      color: rgba(255, 255, 255, 0.3);
-      font-family: 'Eurostile', Arial, sans-serif;
-      user-select: none;
-      pointer-events: none;
-      white-space: nowrap;
+      display: block;
     }
 
     /* Scrollbar styles */
@@ -98,25 +87,23 @@
 
     /* Responsiivisuus puhelimille */
     @media (max-width: 600px) {
-      .payment-section {
-        margin-left: 0.5cm;
-        margin-bottom: 3cm;
+      .payment-header {
+        margin: 0 0.5cm 0.3cm 0.5cm;
       }
 
       .payment-logos {
         gap: 12px;
-        justify-content: flex-start;
-        flex-wrap: wrap; /* Rivitys puhelimella */
+        flex-wrap: wrap;
+        margin-top: 0.3cm;
       }
 
       .payment-logos img {
         height: 24px;
       }
 
+      .payment-title,
       .copyright {
-        font-size: 14px;
-        bottom: 5.5cm;
-        right: 0.5cm;
+        font-size: 13px;
       }
     }
   </style>
@@ -125,8 +112,12 @@
 
   <div class="bottom-line"></div>
 
-  <div class="payment-section">
+  <div class="payment-header">
     <div class="payment-title">Maksutavat</div>
+    <div class="copyright">© 2025 Verkkokauppa</div>
+  </div>
+
+  <div class="payment-section">
     <div class="payment-logos">
       <img src="applepay.svg" alt="Apple Pay" />
       <img src="mc.svg" alt="Mastercard" />
@@ -134,8 +125,6 @@
       <img src="visa.svg" alt="Visa" />
     </div>
   </div>
-
-  <div class="copyright">© 2025 Verkkokauppa</div>
 
 </body>
 </html>
