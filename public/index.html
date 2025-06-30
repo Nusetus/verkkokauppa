@@ -117,12 +117,23 @@
       bottom: 30px;
       left: 0;
       background-color: #2b2f36;
-      padding: 6px 10px;
+      padding: 6px 12px;
       border-radius: 4px;
       font-size: 12px;
       white-space: nowrap;
       color: white;
       z-index: 999;
+      min-width: 120px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .language-box img {
+      height: 16px;
+      width: auto;
+      border-radius: 2px;
+      display: block;
     }
 
     .middle-buttons {
@@ -261,7 +272,7 @@
       </div>
       <div class="language-select" tabindex="0" role="button" onclick="toggleLangBox()" aria-label="Valitse kieli">
         <div class="language-box" id="langBox">
-          <img src="Suomenlippu.svg" alt="Suomen lippu" style="height: 12px; vertical-align: middle; margin-right: 6px;" />
+          <img src="Suomenlippu.svg" alt="Suomen lippu" />
           Suomi
         </div>
         <img src="Suomenlippu.svg" alt="Suomen lippu" />
@@ -286,7 +297,7 @@
   <script>
     function toggleLangBox() {
       const box = document.getElementById("langBox");
-      box.style.display = (box.style.display === "block") ? "none" : "block";
+      box.style.display = (box.style.display === "flex") ? "none" : "flex";
       setTimeout(() => {
         document.addEventListener('click', outsideClick, { once: true });
       }, 10);
