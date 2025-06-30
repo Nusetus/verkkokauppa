@@ -129,14 +129,14 @@
     /* Tämä kontti nyt flex row, keskittää sisältöä vaakasuoraan */
     .middle-buttons-container {
       display: flex;
-      align-items: flex-start; /* nostaa somet-tekstin ylös */
-      gap: 3rem;
+      align-items: center;
+      justify-content: center; /* keskitetään sisältö */
+      gap: 2rem;
       min-width: 360px;
       user-select: text;
       color: white;
       font-size: 14px;
       white-space: nowrap;
-      margin-left: auto; /* Työntää tämän ryhmän mahdollisimman oikealle */
     }
 
     .middle-buttons {
@@ -165,9 +165,10 @@
 
     .somet-wrapper {
       display: flex;
-      flex-direction: column;
+      flex-direction: row;
       align-items: center;
-      min-width: 80px;
+      gap: 1rem; /* Lisää tilaa somet-tekstin ja TikTok-kuvan väliin */
+      margin-left: -1rem; /* Siirtää somet-nappia hieman vasemmalle */
       user-select: none;
       cursor: pointer;
     }
@@ -176,10 +177,9 @@
       font-family: 'Eurostile', Arial, sans-serif;
       font-size: 15px;
       color: rgba(255, 255, 255, 0.15);
-      margin: 0 0 6px 0; /* nostaa somet-teksti ylemmäs */
       white-space: nowrap;
       text-align: center;
-      align-self: flex-start; /* nostaa tekstiä hieman ylöspäin suhteessa kuvaan */
+      margin: 0;
     }
 
     .tiktok-btn {
@@ -189,7 +189,6 @@
       cursor: pointer;
       outline: none;
       user-select: none;
-      align-self: flex-start;
     }
 
     .tiktok-btn img {
@@ -197,11 +196,12 @@
       height: auto;
       display: block;
       transition: filter 0.3s ease;
+      filter: none;
     }
 
-    /* Hover: vaihda kuva siniseksi */
+    /* Hover: vaihda kuvaan sininen drop-shadow vastaamaan nappien hover-väriä */
     .tiktok-btn:hover img {
-      filter: invert(33%) sepia(88%) saturate(686%) hue-rotate(175deg) brightness(1.1);
+      filter: drop-shadow(0 0 3px #a3c1ff);
     }
 
     .copyright-group {
@@ -290,8 +290,7 @@
         flex-direction: column;
         min-width: auto;
         gap: 0.5rem;
-        margin-left: 0;
-        align-items: center;
+        justify-content: flex-start; /* mobiilissa vasemmalle */
       }
 
       .middle-buttons {
@@ -305,6 +304,7 @@
         flex-direction: row;
         gap: 0.5rem;
         min-width: auto;
+        margin-left: 0;
       }
     }
   </style>
