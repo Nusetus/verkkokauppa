@@ -28,7 +28,7 @@
     }
 
     .bottom-line {
-      margin: 0 1cm 1.5cm 1cm; /* vähän alemmas */
+      margin: 0 1cm 1.5cm 1cm;
       height: 1px;
       background-color: rgba(255, 255, 255, 0.15);
       z-index: 900;
@@ -76,12 +76,12 @@
     }
 
     .language-select {
-      margin-top: 10px;
+      margin-top: 18px;
       display: flex;
       align-items: center;
       gap: 6px;
       cursor: pointer;
-      color: rgba(255, 255, 255, 0.7);
+      color: white;
       font-size: 13px;
       user-select: none;
       font-weight: normal;
@@ -98,18 +98,31 @@
 
     .language-select .lang-code {
       font-weight: bold;
-      color: rgba(255, 255, 255, 0.7);
+      color: white;
     }
 
     .language-select .dropdown-arrow {
-      border: solid rgba(255, 255, 255, 0.7);
-      border-width: 0 2px 2px 0;
       display: inline-block;
-      padding: 3px;
-      transform: rotate(45deg);
-      -webkit-transform: rotate(45deg);
+      width: 8px;
+      height: 8px;
+      background-color: white;
+      clip-path: polygon(50% 100%, 0 0, 100% 0);
       margin-left: 4px;
-      margin-bottom: 2px;
+      margin-bottom: -1px;
+    }
+
+    .language-box {
+      display: none;
+      position: absolute;
+      bottom: 30px;
+      left: 0;
+      background-color: black;
+      padding: 6px 10px;
+      border-radius: 4px;
+      font-size: 12px;
+      white-space: nowrap;
+      color: white;
+      z-index: 999;
     }
 
     .middle-buttons {
@@ -117,8 +130,8 @@
       flex-direction: column;
       justify-content: center;
       gap: 0.3rem;
-      font-size: 14px; /* sama kuin verkkokauppa */
-      color: white;    /* täysin valkoinen */
+      font-size: 14px;
+      color: white;
       user-select: text;
       min-width: 180px;
       white-space: nowrap;
@@ -172,13 +185,12 @@
       transition: color 0.2s;
       white-space: nowrap;
       text-align: left;
-      font-size: 13px; /* pienempi fontti */
+      font-size: 13px;
     }
     button.footer-button:hover {
       color: #a3c1ff;
     }
 
-    /* Scrollbar styles */
     ::-webkit-scrollbar {
       width: 6px;
     }
@@ -245,7 +257,8 @@
         <img src="mobilepay.svg" alt="MobilePay" />
         <img src="visa.svg" alt="Visa" />
       </div>
-      <div class="language-select" tabindex="0" role="button" aria-haspopup="listbox" aria-expanded="false" aria-label="Valitse kieli">
+      <div class="language-select" tabindex="0" role="button" onclick="toggleLangBox()" aria-label="Valitse kieli">
+        <div class="language-box" id="langBox">Suomi 🇫🇮</div>
         <img src="Suomenlippu.svg" alt="Suomen lippu" />
         <span class="lang-code">FI</span>
         <i class="dropdown-arrow"></i>
@@ -265,5 +278,21 @@
     </div>
   </div>
 
+  <script>
+    function toggleLangBox() {
+      const box = document.getElementById("langBox");
+      box.style.display = (box.style.display === "block") ? "none" : "block";
+      setTimeout(() => {
+        document.addEventListener('click', outsideClick, { once: true });
+      }, 10);
+    }
+
+    function outsideClick(e) {
+      const box = document.getElementById("langBox");
+      if (!e.target.closest(".language-select")) {
+        box.style.display = "none";
+      }
+    }
+  </script>
 </body>
 </html>
