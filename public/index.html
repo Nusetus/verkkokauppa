@@ -123,7 +123,7 @@
       white-space: nowrap;
       color: white;
       z-index: 999;
-      min-width: 150px; /* tarpeeksi leveä että lippu ja teksti mahtuu */
+      min-width: 150px;
     }
 
     /* Tämä kontti nyt flex row, keskittää sisältöä vaakasuoraan */
@@ -165,21 +165,22 @@
 
     .somet-wrapper {
       display: flex;
-      flex-direction: row;
+      flex-direction: column; /* Nyt pystysuoraan */
       align-items: center;
-      gap: 1rem; /* Lisää tilaa somet-tekstin ja TikTok-kuvan väliin */
-      margin-left: -1rem; /* Siirtää somet-nappia hieman vasemmalle */
+      margin-left: 2cm; /* Liikutetaan noin 2cm oikealle */
       user-select: none;
       cursor: pointer;
+      gap: 0.3rem;
     }
 
     .somet-text {
       font-family: 'Eurostile', Arial, sans-serif;
       font-size: 15px;
-      color: rgba(255, 255, 255, 0.15);
+      color: rgba(163, 193, 255, 1); /* Sama sininen kuin hover väri */
       white-space: nowrap;
       text-align: center;
       margin: 0;
+      user-select: text;
     }
 
     .tiktok-btn {
@@ -189,18 +190,20 @@
       cursor: pointer;
       outline: none;
       user-select: none;
+      filter: drop-shadow(0 0 3px #a3c1ff); /* Sininen varjo normaalitilassa */
+      transition: filter 0.3s ease;
     }
 
     .tiktok-btn img {
       width: 32px;
       height: auto;
       display: block;
-      transition: filter 0.3s ease;
       filter: none;
+      transition: filter 0.3s ease;
     }
 
-    /* Hover: vaihda kuvaan sininen drop-shadow vastaamaan nappien hover-väriä */
-    .tiktok-btn:hover img {
+    /* Hover: pidetään sama sininen drop-shadow */
+    .tiktok-btn:hover {
       filter: drop-shadow(0 0 3px #a3c1ff);
     }
 
@@ -305,6 +308,15 @@
         gap: 0.5rem;
         min-width: auto;
         margin-left: 0;
+        align-items: center;
+      }
+
+      .somet-text {
+        color: rgba(255, 255, 255, 0.15);
+      }
+
+      .tiktok-btn {
+        filter: none;
       }
     }
   </style>
@@ -339,7 +351,7 @@
         <button class="middle-button" onclick="window.location.href='#'">Tietosuojaseloste</button>
       </div>
 
-      <div class="somet-wrapper">
+      <div class="somet-wrapper" aria-label="Sosiaalinen media">
         <div class="somet-text">Somet</div>
         <button class="tiktok-btn" aria-label="TikTok some-link" onclick="window.open('https://www.tiktok.com', '_blank')">
           <img src="Tiktok.png" alt="TikTok" />
