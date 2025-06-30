@@ -74,14 +74,12 @@
 
     .copyright-group {
       display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-      gap: 0.3rem;  /* Tiiviimpi väli */
+      align-items: center;
+      gap: 1rem;
       user-select: none;
       white-space: nowrap;
       color: rgba(255,255,255,0.3);
-      text-align: left;
-      font-size: 14px; /* Sama fonttikoko molemmilla */
+      font-size: 14px; /* Sama fonttikoko */
     }
 
     .email-button {
@@ -91,18 +89,17 @@
       letter-spacing: 1px;
       color: white;
       background: none;
-      border: none; /* Poistettu border */
-      padding: 4px 10px;
+      border: none;
+      padding: 4px 10px 4px 0;
       cursor: pointer;
       user-select: text;
-      transition: background-color 0.2s, color 0.2s;
+      transition: color 0.2s;
       white-space: nowrap;
-      text-align: center;
+      text-align: left;
       display: inline-block;
     }
     .email-button:hover {
-      background-color: rgba(255,255,255,0.15);
-      color: white;
+      color: #a3c1ff; /* Vaaleansininen hover */
     }
 
     /* Scrollbar styles */
@@ -146,6 +143,12 @@
 
       .payment-logos img {
         height: 24px;
+      }
+
+      .copyright-group {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.3rem;
       }
     }
   </style>
