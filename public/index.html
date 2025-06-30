@@ -25,6 +25,33 @@
       flex-direction: column;
       justify-content: flex-end;
       color: rgba(255, 255, 255, 0.3);
+      position: relative;
+    }
+
+    /* Ostoskori laatikko yläkulmassa */
+    #cart-box {
+      position: fixed;
+      top: 10px;
+      right: 10px;
+      background-color: #add8ff; /* vaaleansininen */
+      color: #000;
+      font-family: 'Eurostile', Arial, sans-serif;
+      font-weight: bold;
+      font-size: 14px;
+      width: 30px;
+      height: 30px;
+      border-radius: 5px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+      user-select: none;
+      z-index: 1000;
+      box-shadow: 0 0 5px rgba(0,0,0,0.3);
+      transition: background-color 0.3s;
+    }
+    #cart-box:hover {
+      background-color: #8bb8ff;
     }
 
     .bottom-line {
@@ -325,6 +352,9 @@
 </head>
 <body>
 
+  <!-- Ostoskori laatikko -->
+  <div id="cart-box" aria-label="Ostoskorin sisältö" role="button" tabindex="0">0</div>
+
   <div class="bottom-line"></div>
 
   <div class="footer-container">
@@ -389,5 +419,13 @@
       }
     }
   </script>
+
+  <!-- Lisää kolme git komentoa terminaaliin -->
+  <!--
+  git add .
+  git commit -m "Lisätty ostoskori laatikko yläkulmaan"
+  git push
+  -->
+
 </body>
 </html>
