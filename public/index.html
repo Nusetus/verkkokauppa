@@ -129,13 +129,14 @@
     /* Tämä kontti nyt flex row, keskittää sisältöä vaakasuoraan */
     .middle-buttons-container {
       display: flex;
-      align-items: center;
-      gap: 2rem;
+      align-items: flex-start; /* nostaa somet-tekstin ylös */
+      gap: 3rem;
       min-width: 360px;
       user-select: text;
       color: white;
       font-size: 14px;
       white-space: nowrap;
+      margin-left: auto; /* Työntää tämän ryhmän mahdollisimman oikealle */
     }
 
     .middle-buttons {
@@ -175,9 +176,10 @@
       font-family: 'Eurostile', Arial, sans-serif;
       font-size: 15px;
       color: rgba(255, 255, 255, 0.15);
-      margin-bottom: 4px;
+      margin: 0 0 6px 0; /* nostaa somet-teksti ylemmäs */
       white-space: nowrap;
       text-align: center;
+      align-self: flex-start; /* nostaa tekstiä hieman ylöspäin suhteessa kuvaan */
     }
 
     .tiktok-btn {
@@ -187,6 +189,7 @@
       cursor: pointer;
       outline: none;
       user-select: none;
+      align-self: flex-start;
     }
 
     .tiktok-btn img {
@@ -196,7 +199,7 @@
       transition: filter 0.3s ease;
     }
 
-    /* Hover: vaihda kuva siniseksi, käytetään filter: invert + sepia + saturate + hue-rotate */
+    /* Hover: vaihda kuva siniseksi */
     .tiktok-btn:hover img {
       filter: invert(33%) sepia(88%) saturate(686%) hue-rotate(175deg) brightness(1.1);
     }
@@ -287,6 +290,8 @@
         flex-direction: column;
         min-width: auto;
         gap: 0.5rem;
+        margin-left: 0;
+        align-items: center;
       }
 
       .middle-buttons {
