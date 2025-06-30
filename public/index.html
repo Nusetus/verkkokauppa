@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
-  <title>Nuutin kauppa</title>
+  <title>Verkkokauppa</title>
   <style>
     @font-face {
       font-family: 'Eurostile';
@@ -20,12 +20,15 @@
       font-size: 15px;
       margin: 0;
       padding: 0;
-      height: 100vh;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end; /* Sisältö alas */
       overflow-y: scroll;
     }
 
     .bottom-line {
-      margin: 2cm 1cm 1cm 1cm;
+      margin: 0 1cm 0 1cm;
       height: 1px;
       background-color: rgba(255, 255, 255, 0.15);
       z-index: 900;
@@ -34,8 +37,8 @@
     .payment-section {
       display: flex;
       flex-direction: column;
-      margin-left: 0.8cm; /* Siirto hieman vasemmalle */
-      margin-top: 3cm; /* Alemmas */
+      margin-left: 1cm; /* Hiukan vasemmalle */
+      margin-bottom: 2cm; /* Alhaalla tilaa */
       gap: 0.4cm;
       align-items: flex-start;
     }
@@ -52,10 +55,11 @@
       display: flex;
       gap: 20px;
       align-items: center;
+      flex-wrap: wrap; /* Puhelimella riville */
     }
 
     .payment-logos img {
-      height: 24px; /* Pienempi korkeus */
+      height: 32px; /* Isompi */
       width: auto;
     }
 
@@ -75,6 +79,23 @@
     html {
       scrollbar-color: rgba(255, 255, 255, 0.25) transparent;
       scrollbar-width: thin;
+    }
+
+    /* RESPONSIIIVISUUS PUHELIMILLE */
+    @media (max-width: 600px) {
+      .payment-section {
+        margin-left: 0.5cm;
+        margin-bottom: 3cm;
+      }
+
+      .payment-logos {
+        gap: 12px;
+        justify-content: flex-start;
+      }
+
+      .payment-logos img {
+        height: 28px;
+      }
     }
   </style>
 </head>
