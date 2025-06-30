@@ -22,6 +22,9 @@
       padding: 0;
       min-height: 150vh;
       overflow-y: scroll;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
     }
 
     .bottom-line {
@@ -31,16 +34,17 @@
       z-index: 900;
     }
 
-    .payment-header {
+    .footer-container {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      margin: 0 1cm 0.4cm 1cm;
+      margin: 0 1cm 2cm 1cm;
       user-select: none;
+      flex-wrap: wrap;
+      gap: 1rem;
     }
 
-    .payment-title,
-    .copyright {
+    .payment-title {
       font-size: 14px;
       color: rgba(255, 255, 255, 0.3);
       font-family: 'Eurostile', Arial, sans-serif;
@@ -48,22 +52,25 @@
       white-space: nowrap;
     }
 
-    .payment-section {
-      margin: 0 1cm 2cm 1cm;
-    }
-
     .payment-logos {
       display: flex;
       gap: 20px;
       align-items: center;
       flex-wrap: nowrap;
-      margin-top: 0.4cm;
     }
 
     .payment-logos img {
       height: 28px;
       width: auto;
       display: block;
+    }
+
+    .copyright {
+      font-size: 14px;
+      color: rgba(255, 255, 255, 0.3);
+      font-family: 'Eurostile', Arial, sans-serif;
+      font-weight: normal;
+      white-space: nowrap;
     }
 
     /* Scrollbar styles */
@@ -87,23 +94,25 @@
 
     /* Responsiivisuus puhelimille */
     @media (max-width: 600px) {
-      .payment-header {
-        margin: 0 0.5cm 0.3cm 0.5cm;
-      }
-
-      .payment-logos {
-        gap: 12px;
-        flex-wrap: wrap;
-        margin-top: 0.3cm;
-      }
-
-      .payment-logos img {
-        height: 24px;
+      .footer-container {
+        flex-direction: column;
+        align-items: flex-start;
+        margin: 0.5cm 0.5cm 3cm 0.5cm;
+        gap: 0.5rem;
       }
 
       .payment-title,
       .copyright {
         font-size: 13px;
+      }
+
+      .payment-logos {
+        gap: 12px;
+        flex-wrap: wrap;
+      }
+
+      .payment-logos img {
+        height: 24px;
       }
     }
   </style>
@@ -112,18 +121,15 @@
 
   <div class="bottom-line"></div>
 
-  <div class="payment-header">
+  <div class="footer-container">
     <div class="payment-title">Maksutavat</div>
-    <div class="copyright">© 2025 Verkkokauppa</div>
-  </div>
-
-  <div class="payment-section">
     <div class="payment-logos">
       <img src="applepay.svg" alt="Apple Pay" />
       <img src="mc.svg" alt="Mastercard" />
       <img src="mobilepay.svg" alt="MobilePay" />
       <img src="visa.svg" alt="Visa" />
     </div>
+    <div class="copyright">© 2025 Verkkokauppa</div>
   </div>
 
 </body>
