@@ -14,111 +14,17 @@
     }
 
     body {
-      background-color: #1d2021;
+      background-color: #1e2228; /* Tumma sävy, jossa aavistus sinistä */
       color: white;
       font-family: 'Eurostile', Arial, sans-serif;
       font-size: 15px;
       margin: 0;
       padding: 0;
-      height: 120vh;
+      height: 100vh;
       overflow-y: scroll;
     }
 
-    .top-bar-container {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      z-index: 1000;
-      pointer-events: none;
-    }
-
-    .top-bar {
-      margin: 0 1cm;
-      height: 2.7cm;
-      background-color: #232728;
-      display: flex;
-      flex-direction: column;
-      pointer-events: auto;
-      position: relative;
-      box-sizing: border-box;
-      padding-top: 0.3cm;
-    }
-
-    .search-input {
-      width: 50%;
-      max-width: 400px;
-      padding: 8px 14px;
-      border: none;
-      border-radius: 8px;
-      background-color: #232728;
-      color: white;
-      font-family: 'Eurostile', Arial, sans-serif;
-      font-size: 15px;
-      outline: none;
-      transition: border 0.2s;
-      height: 2em;
-      box-sizing: border-box;
-      margin-bottom: 0.3cm;
-      align-self: center;
-    }
-
-    .search-input:focus {
-      border: 1px solid white;
-      border-radius: 8px;
-    }
-
-    .top-bar-shadow {
-      height: 2px;
-      background-color: #1d2021;
-      width: calc(100% - 2cm);
-      margin: 0 1cm;
-    }
-
-    /* Viiva nappeja ylempänä, kunnolla tilaa nappien yläpuolella */
-    .top-bar-line {
-      position: absolute;
-      bottom: 1.1cm; /* Alemmaksi, nappeihin nähden */
-      left: 1cm;
-      width: calc(100% - 2cm);
-      height: 1px;
-      background-color: rgba(255, 255, 255, 0.15);
-      border-radius: 1px;
-      pointer-events: none;
-      z-index: 1001;
-    }
-
-    .nav-buttons {
-      display: flex;
-      gap: 2cm;
-      margin-top: 0.6cm; /* Pieni siirto nappien yläpuolelta */
-      justify-content: center;
-      margin-bottom: 0;
-    }
-
-    .nav-buttons button {
-      background: none;
-      border: none;
-      color: white;
-      font-family: 'Eurostile', Arial, sans-serif;
-      font-weight: bold;
-      font-size: 14px;
-      cursor: pointer;
-      padding: 0;
-    }
-
-    .nav-buttons button:hover {
-      color: #6caae2;
-    }
-
-    .content {
-      padding-top: calc(2.7cm + 2px + 1cm);
-      min-height: 100vh;
-    }
-
     .bottom-line {
-      /* position: absolute;  <-- POISTETTU */
-      /* bottom: calc(28vh);  <-- POISTETTU */
       margin: 2cm 1cm 1cm 1cm;
       height: 1px;
       background-color: rgba(255, 255, 255, 0.15);
@@ -142,63 +48,9 @@
       scrollbar-color: rgba(255, 255, 255, 0.25) transparent;
       scrollbar-width: thin;
     }
-
-    /* --- MEDIA QUERY PUHELIMILLE --- */
-    @media (max-width: 600px) {
-      .top-bar {
-        height: auto;
-        padding: 0.4cm 0.6cm 0.8cm 0.6cm;
-        margin: 0 0.5cm;
-      }
-
-      .search-input {
-        width: 100%;
-        max-width: 100%;
-        font-size: 14px;
-        margin-bottom: 0.5cm;
-      }
-
-      .nav-buttons {
-        display: none; /* Piilota napit puhelimessa */
-      }
-
-      .top-bar-line {
-        left: 0.5cm;
-        width: calc(100% - 1cm);
-        bottom: 1cm; /* Siirrä hento viiva hakupalkin alapuolelle puhelimessa */
-      }
-
-      .top-bar-shadow {
-        width: calc(100% - 1cm);
-        margin: 0 0.5cm;
-      }
-
-      .bottom-line {
-        left: 0.5cm;
-        width: calc(100% - 1cm);
-      }
-    }
   </style>
 </head>
 <body>
-  <div class="top-bar-container">
-    <div class="top-bar">
-      <input type="text" class="search-input" placeholder="Haku...">
-      <div class="top-bar-line"></div>
-      <div class="nav-buttons">
-        <button>MOOTTORIN OSAT</button>
-        <button>KAASUTTIMET &amp; IMU</button>
-        <button>HALLINTALAITTEET</button>
-        <button>TUNING OSAT</button>
-        <button>PENKINPÄÄLLISET</button>
-      </div>
-    </div>
-    <div class="top-bar-shadow"></div>
-  </div>
-
-  <div class="content">
-    <!-- Sisältö tähän -->
-  </div>
 
   <div class="bottom-line"></div>
 
@@ -209,5 +61,6 @@
     <img src="mobilepay.svg" alt="MobilePay" height="32">
     <img src="visa.svg" alt="Visa" height="32">
   </div>
+
 </body>
 </html>
