@@ -82,7 +82,7 @@
       gap: 6px;
       cursor: pointer;
       color: white;
-      font-size: 14px; /* isompi fontti */
+      font-size: 13px; /* pienennetty */
       user-select: none;
       font-weight: normal;
       position: relative;
@@ -95,7 +95,7 @@
     }
 
     .language-select img {
-      height: 22px; /* isompi lippu */
+      height: 18px; /* pienennetty lippu */
       width: auto;
       border-radius: 2px;
       display: block;
@@ -145,13 +145,11 @@
 
     .middle-buttons-container {
       display: flex;
-      align-items: center;
+      align-items: flex-end;
       gap: 2rem;
       min-width: 360px;
       user-select: none;
-      color: white;
-      font-size: 14px;
-      white-space: nowrap;
+      color: rgba(255,255,255,0.3);
     }
 
     .middle-buttons {
@@ -188,6 +186,7 @@
       user-select: none;
       cursor: pointer;
       gap: 8px;
+      margin-left: 2cm; /* siirretty 2cm oikealle */
     }
 
     .somet-text {
@@ -214,7 +213,7 @@
       height: auto;
       display: block;
       transition: filter 0.3s ease;
-      filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(180deg) brightness(1); /* valkoinen oletus */
+      filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(180deg) brightness(1); /* valkoinen */
     }
 
     .tiktok-btn:hover img {
