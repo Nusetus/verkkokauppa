@@ -175,10 +175,10 @@
     .somet-text {
       font-family: 'Eurostile', Arial, sans-serif;
       font-size: 15px;
-      color: rgba(255, 255, 255, 0.15); /* haalea valkoinen */
+      color: rgba(255, 255, 255, 0.15);
       white-space: nowrap;
       text-align: center;
-      margin: 0 0 0.5cm 0; /* nostaa tekstiä ylöspäin 0.5cm */
+      margin: 0.2cm 0 0 0; /* liikutettu 0.2cm alas */
       user-select: text;
     }
 
@@ -189,7 +189,8 @@
       cursor: pointer;
       outline: none;
       user-select: none;
-      filter: none; /* Ei kimallusta normaalisti */
+      margin-top: 0.1cm; /* liikutettu 0.1cm alas */
+      filter: none;
       transition: filter 0.3s ease, filter 0.3s ease-in-out;
     }
 
@@ -198,11 +199,16 @@
       height: auto;
       display: block;
       filter: none;
-      transition: filter 0.3s ease;
+      transition: filter 0.3s ease, brightness 0.3s ease;
+      /* alkuperäinen kuva normaali */
+      filter: none;
     }
 
     .tiktok-btn:hover img {
-      filter: drop-shadow(0 0 5px #a3c1ff) drop-shadow(0 0 8px #a3c1ff) brightness(1.2) saturate(1.5) sepia(0.3) hue-rotate(180deg);
+      filter: none;
+      /* korvaan drop-shadowin värillä: tehdään kuva vaaleansinertävä */
+      /* koska kuvan väri on, todennäköisesti, mustavalkoinen tai RGB, käytetään brightness ja sepia/hue-rotate */
+      filter: brightness(1.2) sepia(1) hue-rotate(190deg) saturate(4) brightness(1.2);
     }
 
     .copyright-group {
@@ -316,6 +322,7 @@
 
       .tiktok-btn {
         filter: none;
+        margin-top: 0;
       }
     }
   </style>
