@@ -20,15 +20,16 @@
       font-size: 15px;
       margin: 0;
       padding: 0;
-      min-height: 100vh;
+      min-height: 150vh; /* Sivusta pidempi scrollaukseen */
       display: flex;
       flex-direction: column;
-      justify-content: flex-end; /* Sisältö alas */
+      justify-content: flex-end;
       overflow-y: scroll;
+      position: relative;
     }
 
     .bottom-line {
-      margin: 0 1cm 1cm 1cm; /* Ylempänä kuin ennen */
+      margin: 0 1cm 1cm 1cm;
       height: 1px;
       background-color: rgba(255, 255, 255, 0.15);
       z-index: 900;
@@ -37,14 +38,14 @@
     .payment-section {
       display: flex;
       flex-direction: column;
-      margin-left: 1cm; /* Siirto hieman vasemmalle */
-      margin-bottom: 2cm; /* Alhaalla tilaa */
+      margin-left: 1cm;
+      margin-bottom: 2cm;
       gap: 0.4cm;
       align-items: flex-start;
     }
 
     .payment-title {
-      font-size: 14px; /* Isompi fontti */
+      font-size: 14px;
       color: rgba(255, 255, 255, 0.3);
       font-weight: normal;
       font-family: 'Eurostile', Arial, sans-serif;
@@ -59,11 +60,22 @@
     }
 
     .payment-logos img {
-      height: 28px; /* Sama koko kaikille */
+      height: 28px;
       width: auto;
     }
 
-    /* Scrollbar tyylit */
+    .copyright {
+      position: fixed;
+      bottom: 10px;
+      right: 10px;
+      font-size: 13px;
+      color: rgba(255, 255, 255, 0.3);
+      font-family: 'Eurostile', Arial, sans-serif;
+      user-select: none;
+      pointer-events: none;
+    }
+
+    /* Scrollbar styles */
     ::-webkit-scrollbar {
       width: 6px;
     }
@@ -97,6 +109,12 @@
       .payment-logos img {
         height: 24px;
       }
+
+      .copyright {
+        font-size: 11px;
+        bottom: 8px;
+        right: 8px;
+      }
     }
   </style>
 </head>
@@ -113,6 +131,8 @@
       <img src="visa.svg" alt="Visa">
     </div>
   </div>
+
+  <div class="copyright">© 2025 Verkkokauppa</div>
 
 </body>
 </html>
