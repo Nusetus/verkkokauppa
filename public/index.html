@@ -44,6 +44,13 @@
       gap: 1rem;
     }
 
+    .payment-group {
+      display: flex;
+      flex-direction: column;
+      gap: 0.3rem;
+      user-select: none;
+    }
+
     .payment-title {
       font-size: 14px;
       color: rgba(255, 255, 255, 0.3);
@@ -70,6 +77,7 @@
       color: rgba(255, 255, 255, 0.3);
       font-family: 'Eurostile', Arial, sans-serif;
       font-weight: normal;
+      white-space: nowrap;
       white-space: nowrap;
     }
 
@@ -122,12 +130,14 @@
   <div class="bottom-line"></div>
 
   <div class="footer-container">
-    <div class="payment-title">Maksutavat</div>
-    <div class="payment-logos">
-      <img src="applepay.svg" alt="Apple Pay" />
-      <img src="mc.svg" alt="Mastercard" />
-      <img src="mobilepay.svg" alt="MobilePay" />
-      <img src="visa.svg" alt="Visa" />
+    <div class="payment-group">
+      <div class="payment-title">Maksutavat</div>
+      <div class="payment-logos">
+        <img src="applepay.svg" alt="Apple Pay" />
+        <img src="mc.svg" alt="Mastercard" />
+        <img src="mobilepay.svg" alt="MobilePay" />
+        <img src="visa.svg" alt="Visa" />
+      </div>
     </div>
     <div class="copyright">© 2025 Verkkokauppa</div>
   </div>
