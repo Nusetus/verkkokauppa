@@ -112,7 +112,7 @@
     }
 
     .language-box {
-      display: none; /* Aluksi piilossa */
+      display: none;
       position: absolute;
       bottom: 30px;
       left: 0;
@@ -126,11 +126,10 @@
       min-width: 150px;
     }
 
-    /* Tämä kontti nyt flex row, keskittää sisältöä vaakasuoraan */
     .middle-buttons-container {
       display: flex;
       align-items: center;
-      justify-content: center; /* keskitetään sisältö */
+      justify-content: center;
       gap: 2rem;
       min-width: 360px;
       user-select: text;
@@ -165,9 +164,9 @@
 
     .somet-wrapper {
       display: flex;
-      flex-direction: column; /* Nyt pystysuoraan */
+      flex-direction: column;
       align-items: center;
-      margin-left: 2cm; /* Liikutetaan noin 2cm oikealle */
+      margin-left: 2cm;
       user-select: none;
       cursor: pointer;
       gap: 0.3rem;
@@ -176,10 +175,10 @@
     .somet-text {
       font-family: 'Eurostile', Arial, sans-serif;
       font-size: 15px;
-      color: rgba(163, 193, 255, 1); /* Sama sininen kuin hover väri */
+      color: rgba(255, 255, 255, 0.15); /* haalea valkoinen */
       white-space: nowrap;
       text-align: center;
-      margin: 0;
+      margin: 0 0 0.5cm 0; /* nostaa tekstiä ylöspäin 0.5cm */
       user-select: text;
     }
 
@@ -190,8 +189,8 @@
       cursor: pointer;
       outline: none;
       user-select: none;
-      filter: drop-shadow(0 0 3px #a3c1ff); /* Sininen varjo normaalitilassa */
-      transition: filter 0.3s ease;
+      filter: none; /* Ei kimallusta normaalisti */
+      transition: filter 0.3s ease, filter 0.3s ease-in-out;
     }
 
     .tiktok-btn img {
@@ -202,9 +201,8 @@
       transition: filter 0.3s ease;
     }
 
-    /* Hover: pidetään sama sininen drop-shadow */
-    .tiktok-btn:hover {
-      filter: drop-shadow(0 0 3px #a3c1ff);
+    .tiktok-btn:hover img {
+      filter: drop-shadow(0 0 5px #a3c1ff) drop-shadow(0 0 8px #a3c1ff) brightness(1.2) saturate(1.5) sepia(0.3) hue-rotate(180deg);
     }
 
     .copyright-group {
@@ -293,7 +291,7 @@
         flex-direction: column;
         min-width: auto;
         gap: 0.5rem;
-        justify-content: flex-start; /* mobiilissa vasemmalle */
+        justify-content: flex-start;
       }
 
       .middle-buttons {
@@ -313,6 +311,7 @@
 
       .somet-text {
         color: rgba(255, 255, 255, 0.15);
+        margin: 0;
       }
 
       .tiktok-btn {
