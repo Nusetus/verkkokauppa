@@ -40,9 +40,9 @@
       align-items: flex-end;
       margin: 0 1cm 2cm 1cm;
       user-select: none;
-      flex-wrap: wrap;
-      gap: 1rem;
+      flex-wrap: nowrap;
       color: rgba(255,255,255,0.3);
+      gap: 2rem;
     }
 
     .payment-group {
@@ -51,6 +51,7 @@
       gap: 0.3rem;
       user-select: none;
       text-align: left;
+      min-width: 200px;
     }
 
     .payment-title {
@@ -72,6 +73,33 @@
       display: block;
     }
 
+    .middle-buttons {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 0.3rem;
+      font-size: 12px;
+      text-transform: capitalize;
+      user-select: text;
+      color: rgba(255, 255, 255, 0.3);
+      min-width: 180px;
+      white-space: nowrap;
+    }
+
+    button.middle-button {
+      font-family: 'Eurostile', Arial, sans-serif;
+      background: none;
+      border: none;
+      padding: 4px 0;
+      cursor: pointer;
+      color: inherit;
+      text-align: center;
+      transition: color 0.2s;
+    }
+    button.middle-button:hover {
+      color: #a3c1ff;
+    }
+
     .copyright-group {
       display: flex;
       flex-direction: column;
@@ -81,6 +109,7 @@
       white-space: nowrap;
       color: rgba(255,255,255,0.3);
       font-size: 14px;
+      min-width: 200px;
     }
 
     .footer-buttons {
@@ -104,7 +133,6 @@
       transition: color 0.2s;
       white-space: nowrap;
       text-align: left;
-      display: inline-block;
       font-size: 13px;
     }
     button.footer-button:hover {
@@ -140,7 +168,8 @@
 
       .payment-title,
       button.footer-button,
-      .copyright {
+      .copyright,
+      button.middle-button {
         font-size: 13px;
       }
 
@@ -151,6 +180,11 @@
 
       .payment-logos img {
         height: 24px;
+      }
+
+      .middle-buttons {
+        min-width: auto;
+        text-align: left;
       }
     }
   </style>
@@ -170,12 +204,15 @@
       </div>
     </div>
 
+    <div class="middle-buttons">
+      <button class="middle-button" onclick="window.location.href='#'">Toimitus- ja maksuehdot</button>
+      <button class="middle-button" onclick="window.location.href='#'">Tietosuojaseloste</button>
+    </div>
+
     <div class="copyright-group">
       <div class="footer-buttons">
-        <button class="footer-button" onclick="window.location.href='#'">Toimitus- ja maksuehdot</button>
-        <button class="footer-button" onclick="window.location.href='#'">Tietosuojaseloste</button>
+        <button class="footer-button" onclick="window.location.href='mailto:CONTACT@GMAIL.COM'">CONTACT@GMAIL.COM</button>
       </div>
-      <button class="footer-button" onclick="window.location.href='mailto:CONTACT@GMAIL.COM'">CONTACT@GMAIL.COM</button>
       <div>© 2025 Verkkokauppa</div>
     </div>
   </div>
