@@ -43,6 +43,7 @@
       flex-wrap: nowrap;
       color: rgba(255,255,255,0.3);
       gap: 2rem;
+      position: relative;
     }
 
     .payment-group {
@@ -52,6 +53,7 @@
       user-select: none;
       text-align: left;
       min-width: 200px;
+      position: relative;
     }
 
     .payment-title {
@@ -71,6 +73,43 @@
       height: 28px;
       width: auto;
       display: block;
+    }
+
+    .language-select {
+      margin-top: 10px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      cursor: pointer;
+      color: rgba(255, 255, 255, 0.7);
+      font-size: 13px;
+      user-select: none;
+      font-weight: normal;
+      position: relative;
+      width: max-content;
+    }
+
+    .language-select img {
+      height: 18px;
+      width: auto;
+      border-radius: 2px;
+      display: block;
+    }
+
+    .language-select .lang-code {
+      font-weight: bold;
+      color: rgba(255, 255, 255, 0.7);
+    }
+
+    .language-select .dropdown-arrow {
+      border: solid rgba(255, 255, 255, 0.7);
+      border-width: 0 2px 2px 0;
+      display: inline-block;
+      padding: 3px;
+      transform: rotate(45deg);
+      -webkit-transform: rotate(45deg);
+      margin-left: 4px;
+      margin-bottom: 2px;
     }
 
     .middle-buttons {
@@ -186,6 +225,10 @@
         min-width: auto;
         text-align: left;
       }
+
+      .language-select {
+        margin-top: 6px;
+      }
     }
   </style>
 </head>
@@ -201,6 +244,11 @@
         <img src="mc.svg" alt="Mastercard" />
         <img src="mobilepay.svg" alt="MobilePay" />
         <img src="visa.svg" alt="Visa" />
+      </div>
+      <div class="language-select" tabindex="0" role="button" aria-haspopup="listbox" aria-expanded="false" aria-label="Valitse kieli">
+        <img src="fi-flag.svg" alt="Suomen lippu" />
+        <span class="lang-code">FI</span>
+        <i class="dropdown-arrow"></i>
       </div>
     </div>
 
