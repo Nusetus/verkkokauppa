@@ -76,23 +76,22 @@
       display: flex;
       flex-direction: column;
       align-items: flex-start;
-      gap: 0.6rem;  /* Väli tekstien välissä */
+      gap: 0.3rem;  /* Tiiviimpi väli */
       user-select: none;
       white-space: nowrap;
       color: rgba(255,255,255,0.3);
       text-align: left;
+      font-size: 14px; /* Sama fonttikoko molemmilla */
     }
 
     .email-button {
-      font-size: 14px;
       font-family: 'Eurostile', Arial, sans-serif;
       font-weight: normal;
       text-transform: uppercase;
       letter-spacing: 1px;
       color: white;
       background: none;
-      border: 1px solid white;
-      border-radius: 6px;
+      border: none; /* Poistettu border */
       padding: 4px 10px;
       cursor: pointer;
       user-select: text;
@@ -102,14 +101,8 @@
       display: inline-block;
     }
     .email-button:hover {
-      background-color: white;
-      color: #1e2228;
-    }
-
-    .copyright {
-      font-size: 14px;
-      font-family: 'Eurostile', Arial, sans-serif;
-      font-weight: normal;
+      background-color: rgba(255,255,255,0.15);
+      color: white;
     }
 
     /* Scrollbar styles */
@@ -173,7 +166,7 @@
     </div>
     <div class="copyright-group">
       <button class="email-button" onclick="window.location.href='mailto:CONTACT@GMAIL.COM'">CONTACT@GMAIL.COM</button>
-      <div class="copyright">© 2025 Verkkokauppa</div>
+      <div>© 2025 Verkkokauppa</div>
     </div>
   </div>
 
