@@ -72,12 +72,29 @@
       display: block;
     }
 
+    .copyright-group {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 0.2rem;
+      user-select: none;
+      white-space: nowrap;
+    }
+
+    .email {
+      font-size: 14px;
+      color: rgba(255, 255, 255, 0.3);
+      font-family: 'Eurostile', Arial, sans-serif;
+      font-weight: normal;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
     .copyright {
       font-size: 14px;
       color: rgba(255, 255, 255, 0.3);
       font-family: 'Eurostile', Arial, sans-serif;
       font-weight: normal;
-      white-space: nowrap;
       white-space: nowrap;
     }
 
@@ -110,6 +127,7 @@
       }
 
       .payment-title,
+      .email,
       .copyright {
         font-size: 13px;
       }
@@ -121,6 +139,10 @@
 
       .payment-logos img {
         height: 24px;
+      }
+
+      .copyright-group {
+        align-items: flex-start;
       }
     }
   </style>
@@ -139,7 +161,10 @@
         <img src="visa.svg" alt="Visa" />
       </div>
     </div>
-    <div class="copyright">© 2025 Verkkokauppa</div>
+    <div class="copyright-group">
+      <div class="email">VERKKOKAUPPA@GMAIL.COM</div>
+      <div class="copyright">© 2025 Verkkokauppa</div>
+    </div>
   </div>
 
 </body>
