@@ -14,167 +14,171 @@
     }
 
     body {
-      background-color: #1a2230; /* vähän sinisempi */
-      color: white;
+      background-color: #1e2228;
       font-family: 'Eurostile', Arial, sans-serif;
       font-size: 15px;
       margin: 0;
       padding: 0;
-      height: 110vh; /* vähän pidempi */
+      min-height: 110vh;
       overflow-y: scroll;
       display: flex;
       flex-direction: column;
-      justify-content: flex-start;
-      align-items: flex-start;
-    }
-
-    .content {
-      flex: 1 0 auto;
-      width: 100%;
-      min-height: 100vh;
+      justify-content: flex-end;
+      color: rgba(255, 255, 255, 0.3);
     }
 
     .bottom-line {
-      margin: 1.2cm 1cm 0.7cm 1cm;
+      margin: 0 1cm 1cm 1cm;
       height: 1px;
       background-color: rgba(255, 255, 255, 0.15);
-      width: calc(100% - 2cm);
-      flex-shrink: 0;
+      z-index: 900;
     }
 
     .footer-container {
-      width: 100%;
       display: flex;
       justify-content: space-between;
-      align-items: center;
-      padding: 0 1cm 2cm 1cm;
-      flex-shrink: 0;
+      align-items: flex-end;
+      margin: 0 1cm 2cm 1cm;
+      user-select: none;
+      flex-wrap: nowrap;
+      color: rgba(255,255,255,0.3);
       gap: 2rem;
-      box-sizing: border-box;
+      position: relative;
     }
 
-    /* Maksutavat osio */
     .payment-group {
       display: flex;
       flex-direction: column;
-      gap: 0.4rem;
-      min-width: 280px;
+      gap: 0.3rem;
+      user-select: none;
+      text-align: left;
+      min-width: 200px;
+      position: relative;
     }
 
     .payment-title {
-      font-size: 16px;
-      color: rgba(255,255,255,0.4);
+      font-size: 14px;
       font-weight: normal;
-      user-select: none;
+      white-space: nowrap;
     }
 
     .payment-logos {
       display: flex;
-      gap: 16px;
+      gap: 20px;
       align-items: center;
+      flex-wrap: nowrap;
     }
 
     .payment-logos img {
       height: 28px;
       width: auto;
-      user-select: none;
+      display: block;
     }
 
-    /* Kielivalinta */
     .language-select {
-      margin-top: 8px;
+      margin-top: 10px;
       display: flex;
       align-items: center;
-      cursor: pointer;
       gap: 6px;
+      cursor: pointer;
+      color: rgba(255, 255, 255, 0.7);
+      font-size: 13px;
       user-select: none;
+      font-weight: normal;
+      position: relative;
+      width: max-content;
     }
 
     .language-select img {
       height: 18px;
       width: auto;
-      user-select: none;
+      border-radius: 2px;
+      display: block;
     }
 
-    .lang-code {
-      font-size: 15px;
-      color: rgba(255,255,255,0.7);
-      font-weight: normal;
-      user-select: none;
+    .language-select .lang-code {
+      font-weight: bold;
+      color: rgba(255, 255, 255, 0.7);
     }
 
-    .dropdown-arrow {
-      border: solid rgba(255,255,255,0.7);
+    .language-select .dropdown-arrow {
+      border: solid rgba(255, 255, 255, 0.7);
       border-width: 0 2px 2px 0;
       display: inline-block;
       padding: 3px;
       transform: rotate(45deg);
       -webkit-transform: rotate(45deg);
-      user-select: none;
       margin-left: 4px;
+      margin-bottom: 2px;
     }
 
-    /* Verkkokauppa ja Contact napit */
-    .contact-group {
+    .middle-buttons {
       display: flex;
       flex-direction: column;
+      justify-content: center;
       gap: 0.3rem;
+      font-size: 14px; /* sama kuin verkkokauppa */
+      color: white;    /* täysin valkoinen */
+      user-select: text;
+      min-width: 180px;
+      white-space: nowrap;
+    }
+
+    button.middle-button {
+      font-family: 'Eurostile', Arial, sans-serif;
+      background: none;
+      border: none;
+      padding: 4px 0;
+      cursor: pointer;
+      color: inherit;
+      text-align: center;
+      transition: color 0.2s;
+      font-size: 14px;
+    }
+    button.middle-button:hover {
+      color: #a3c1ff;
+    }
+
+    .copyright-group {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 1rem;
+      user-select: none;
+      white-space: nowrap;
+      color: rgba(255,255,255,0.3);
+      font-size: 15px;
       min-width: 200px;
     }
 
-    .contact-text {
-      font-size: 16px;
-      color: rgba(255,255,255,0.4);
-      user-select: none;
-      margin: 0;
-      font-weight: normal;
-    }
-
-    .contact-email-button {
-      font-size: 15px;
-      color: white;
-      background: none;
-      border: none;
-      cursor: pointer;
-      padding: 0;
-      font-family: 'Eurostile', Arial, sans-serif;
-      text-align: left;
-      user-select: text;
-      font-weight: normal;
-      transition: color 0.3s ease;
-    }
-
-    .contact-email-button:hover {
-      color: #6caae2;
-    }
-
-    /* Toimitus ja tietosuoja napit */
-    .policy-buttons {
+    .footer-buttons {
       display: flex;
-      gap: 1.6rem;
-      justify-content: center;
-      flex: 1 1 auto;
+      flex-direction: column;
+      gap: 0.5rem;
+      width: max-content;
     }
 
-    .policy-button {
+    button.footer-button {
+      font-family: 'Eurostile', Arial, sans-serif;
+      font-weight: normal;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: rgba(255, 255, 255, 0.7);
       background: none;
       border: none;
-      color: white;
-      font-family: 'Eurostile', Arial, sans-serif;
-      font-size: 16px;
+      padding: 4px 0;
       cursor: pointer;
-      font-weight: normal;
-      text-transform: capitalize;
-      user-select: none;
-      padding: 0;
-      transition: color 0.3s ease;
+      user-select: text;
+      transition: color 0.2s;
+      white-space: nowrap;
+      text-align: left;
+      font-size: 13px; /* pienempi fontti */
+    }
+    button.footer-button:hover {
+      color: #a3c1ff;
     }
 
-    .policy-button:hover {
-      color: #6caae2;
-    }
-
-    /* Scrollbar */
+    /* Scrollbar styles */
     ::-webkit-scrollbar {
       width: 6px;
     }
@@ -193,66 +197,42 @@
       scrollbar-width: thin;
     }
 
-    /* Media queries puhelimille */
     @media (max-width: 600px) {
-      body {
-        height: 130vh;
-      }
-
       .footer-container {
         flex-direction: column;
-        gap: 1rem;
-        padding-bottom: 3cm;
         align-items: flex-start;
+        margin: 0.5cm 0.5cm 3cm 0.5cm;
+        gap: 0.5rem;
       }
 
-      .payment-group {
-        min-width: auto;
-        width: 100%;
+      .payment-title,
+      button.footer-button,
+      .copyright,
+      button.middle-button {
+        font-size: 13px;
+      }
+
+      .payment-logos {
+        gap: 12px;
+        flex-wrap: wrap;
       }
 
       .payment-logos img {
         height: 24px;
       }
 
-      .language-select img {
-        height: 16px;
-      }
-
-      .contact-group {
+      .middle-buttons {
         min-width: auto;
-        width: 100%;
+        text-align: left;
       }
 
-      .policy-buttons {
-        gap: 1rem;
-        flex-wrap: wrap;
-        justify-content: flex-start;
-      }
-
-      .policy-button {
-        font-size: 14px;
-      }
-
-      .payment-title,
-      .contact-text {
-        font-size: 14px;
-      }
-
-      .contact-email-button {
-        font-size: 14px;
-      }
-
-      .lang-code {
-        font-size: 14px;
+      .language-select {
+        margin-top: 6px;
       }
     }
   </style>
 </head>
 <body>
-  <div class="content">
-    <!-- Sisältö tähän -->
-  </div>
 
   <div class="bottom-line"></div>
 
@@ -266,21 +246,24 @@
         <img src="visa.svg" alt="Visa" />
       </div>
       <div class="language-select" tabindex="0" role="button" aria-haspopup="listbox" aria-expanded="false" aria-label="Valitse kieli">
-        <img src="Suomenlippu.svg" alt="Suomen lippu" />
+        <img src="fi-flag.svg" alt="Suomen lippu" />
         <span class="lang-code">FI</span>
         <i class="dropdown-arrow"></i>
       </div>
     </div>
 
-    <div class="policy-buttons">
-      <button class="policy-button">Toimitus- ja maksuehdot</button>
-      <button class="policy-button">Tietosuojaseloste</button>
+    <div class="middle-buttons">
+      <button class="middle-button" onclick="window.location.href='#'">Toimitus- ja maksuehdot</button>
+      <button class="middle-button" onclick="window.location.href='#'">Tietosuojaseloste</button>
     </div>
 
-    <div class="contact-group">
-      <p class="contact-text">Verkkokauppa</p>
-      <button class="contact-email-button" onclick="window.location='mailto:contact@gmail.com'">CONTACT@GMAIL.COM</button>
+    <div class="copyright-group">
+      <div class="footer-buttons">
+        <button class="footer-button" onclick="window.location.href='mailto:CONTACT@GMAIL.COM'">CONTACT@GMAIL.COM</button>
+      </div>
+      <div>© 2025 Verkkokauppa</div>
     </div>
   </div>
+
 </body>
 </html>
