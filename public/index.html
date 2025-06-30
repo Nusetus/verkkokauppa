@@ -82,7 +82,7 @@
       gap: 6px;
       cursor: pointer;
       color: white;
-      font-size: 12px; /* pienempi fontti */
+      font-size: 14px; /* isompi fontti */
       user-select: none;
       font-weight: normal;
       position: relative;
@@ -95,10 +95,14 @@
     }
 
     .language-select img {
-      height: 16px; /* pienempi lippu */
+      height: 22px; /* isompi lippu */
       width: auto;
       border-radius: 2px;
       display: block;
+    }
+
+    .language-select span {
+      user-select: none;
     }
 
     .language-select .dropdown-arrow {
@@ -119,7 +123,7 @@
       background-color: #444a56; /* harmaa tausta */
       padding: 6px 12px;
       border-radius: 4px;
-      font-size: 14px; /* vähän isompi kuin valikko */
+      font-size: 14px;
       white-space: nowrap;
       color: white;
       z-index: 999;
@@ -128,19 +132,17 @@
       align-items: center;
       gap: 8px;
       box-sizing: border-box;
-      /* leveys just sopiva teksteille */
       max-width: 200px;
       user-select: none;
     }
 
     .language-box img {
-      height: 18px; /* vähän pienempi kuin aiemmin */
+      height: 18px;
       width: auto;
       display: block;
       border-radius: 2px;
     }
 
-    /* Tämä kontti nyt flex row, keskittää sisältöä vaakasuoraan */
     .middle-buttons-container {
       display: flex;
       align-items: center;
@@ -158,6 +160,7 @@
       justify-content: center;
       gap: 0.3rem;
       min-width: 180px;
+      user-select: none;
     }
 
     button.middle-button {
@@ -170,6 +173,7 @@
       text-align: center;
       transition: color 0.2s;
       font-size: 14px;
+      user-select: none;
     }
 
     button.middle-button:hover {
@@ -183,14 +187,7 @@
       min-width: 80px;
       user-select: none;
       cursor: pointer;
-      gap: 8px; /* Lisää tilaa somet ja tik tok kuvan väliin */
-    }
-
-    /* Muutetaan somet-wrapper flex row:ksi ja siirretään vasemmalle */
-    .middle-buttons-container .somet-wrapper {
-      flex-direction: row;
-      gap: 10px;
-      margin-left: -20px; /* liikuta somet nappia vähän vasemmalle */
+      gap: 8px;
     }
 
     .somet-text {
@@ -200,6 +197,7 @@
       margin-bottom: 4px;
       white-space: nowrap;
       text-align: center;
+      user-select: none;
     }
 
     .tiktok-btn {
@@ -216,12 +214,11 @@
       height: auto;
       display: block;
       transition: filter 0.3s ease;
-      filter: invert(33%) sepia(88%) saturate(686%) hue-rotate(175deg) brightness(1); /* normaali väri */
+      filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(180deg) brightness(1); /* valkoinen oletus */
     }
 
-    /* Hover: vaihda kuva siniseksi kuten teksteissä */
     .tiktok-btn:hover img {
-      filter: invert(45%) sepia(84%) saturate(4046%) hue-rotate(210deg) brightness(1);
+      filter: invert(45%) sepia(84%) saturate(4046%) hue-rotate(210deg) brightness(1); /* vaaleansininen hover */
     }
 
     .copyright-group {
@@ -320,7 +317,7 @@
       }
 
       .somet-wrapper {
-        flex-direction: row;
+        flex-direction: column;
         gap: 0.5rem;
         min-width: auto;
         margin-left: 0;
